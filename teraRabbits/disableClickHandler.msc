@@ -1,0 +1,2 @@
+@player &6&lStopping teraRabbits. Have a hoppy day!
+@bypass /kill @e[type=minecraft:ghast,name={{targetName}},limit=1]
