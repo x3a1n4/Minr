@@ -1,20 +1,46 @@
 @using teraRabbits
 
-@player Clicked a ghast!
+# @player Clicked a ghast!
 
 # Get the block we're looking at
 @define Block targetBlock = player.getTargetBlock(120)
 @player {{targetBlock.getLocation()}}
 
 # Just set it to be a block for now
-@bypass /setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:red_concrete
+# @bypass /setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:red_concrete
 
 # Run functions based on tools named things
-# MVP: 
-#   Tool to select pattern
-#   Block named sphere [x] will create a sphere of that block
-#   Wooden shovel named sphere [x] will set to air
-#   Wooden shovel named smooth [x] will smooth
-#   Block named paint [x] will paint that area (replace solid blocks)
-#   Shulker box named mask in hotbar will limit mask
-#   Spawn invisible rabbit (at top middle of block)
+@define Item playerHeldItem = player.getItemInMainHand()
+@define String itemType = playerHeldItem.getItemType()
+@define String itemName = playerHeldItem.getDisplayName()
+@define Int size = itemName.split("[")[1].split("]")[0]
+@define String command = itemName.split("[")[0].trim().toLowerCase()
+
+# Check if size is too big
+@if (size > 5)
+    @player &6&lTeraRabbits: Size too big! Must be a maximum of 5
+@elseif (size < 0) 
+    @player &6&lTeraRabbits: Invalid size!
+@else
+    @if (command == "Select Block")
+        @var selectBlock(targetBlock)
+    @elseif (command == "Sphere")
+        @var sphere(targetBlock, size)
+    @elseif (command == "Smooth")
+        @var smooth(targetBlock, size)
+    @elseif (command == "Cuboid Select")
+        @var cubiodSelect(targetBlock)
+    @elseif (command == "Set")
+        @var set()
+    @elseif (command == "Copy")
+        @var copy(targetBlock)
+    @elseif (command == "Paste")
+        @var paste(targetBlock)
+    @elseif (command == "Stack")
+        @var stack(player)
+    @elseif (command == "Undo")
+        @var undo()
+    @elseif (command == "Spawn Rabbit")
+        @var spawnRabbit(targetBlock)
+    @fi
+@fi
