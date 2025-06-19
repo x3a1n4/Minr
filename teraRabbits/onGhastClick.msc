@@ -1,0 +1,20 @@
+@using teraRabbits
+
+@player Clicked a ghast!
+
+# Get the block we're looking at
+@define Block targetBlock = player.getTargetBlock(120)
+@player {{targetBlock.getLocation()}}
+
+# Just set it to be a block for now
+@bypass /setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:red_concrete
+
+# Run functions based on tools named things
+# MVP: 
+#   Tool to select pattern
+#   Block named sphere [x] will create a sphere of that block
+#   Wooden shovel named sphere [x] will set to air
+#   Wooden shovel named smooth [x] will smooth
+#   Block named paint [x] will paint that area (replace solid blocks)
+#   Shulker box named mask in hotbar will limit mask
+#   Spawn invisible rabbit (at top middle of block)

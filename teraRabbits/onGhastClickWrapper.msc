@@ -1,0 +1,2 @@
+# A small entity script to call a function
+@var teraRabbits::onGhastClick(player)

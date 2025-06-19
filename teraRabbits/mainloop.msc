@@ -1,0 +1,11 @@
+@using teraRabbits
+
+# Copy ghast to player's location
+@for Int i in list::range(1, 1000)
+    @var ghastEntity.teleport(targetPlayer.getPosition())
+    @delay 5
+@done
+
+# Time out
+@player &6&lTeraRabbits timed out. Have a hoppy day!
+@var ghastEntity.setHealth(0.0d)

@@ -1,0 +1,19 @@
+@namespace teraRabbits
+    # The main loop
+    mainloop()
+    enableClickHandler(Player player)
+    disableClickHandler(Player player)
+    # The player using the scripts
+    Player targetPlayer
+    # The ghast that holds onGhastClick
+    Entity ghastEntity
+
+    # The ghast click function
+    onGhastClick(Player player)
+    # The block targeted by an operation
+    Block targetBlock
+
+    @namespace tools
+        sphere(Block targetBlock)
+    @endnamespace
+@endnamespace
