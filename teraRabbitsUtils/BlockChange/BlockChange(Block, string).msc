@@ -1,0 +1,9 @@
+@using teraRabbitsUtils
+
+# Set values
+@var block = block
+@var this.to = to
+@var this.originalBlock = block.getBlockType()
+
+# Change the block over
+@var this.block.getLocation().set(this.to)

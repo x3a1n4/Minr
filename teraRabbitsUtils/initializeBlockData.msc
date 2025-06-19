@@ -1,0 +1,28 @@
+@using teraRabbitsUtils
+
+# data from https://github.com/RandomGamingDev/mc_block_color_mapper/blob/main/blockmodel_avgs.csv
+
+# NOTE: add \ as line continuation in minr extension
+
+# Every solid block gets a top level, any solid block variants get their own sub-levels
+# This is used for type variants, that's it
+
+# Should be marked as final
+@define final BlockData[] blockData = BlockData[
+    BlockData("acacia_planks", Colour(168.0, 90.0, 50.0, 255.0), 
+        BlockAlt[
+            BlockAlt("button",              "acacia_button"),
+            BlockAlt("door",                "acacia_door"),
+            BlockAlt("fence",               "acacia_fence"),
+            BlockAlt("fence_gate",          "acacia_fence_gate"),
+            BlockAlt("hanging_sign",        "acacia_hanging_sign"),
+            BlockAlt("pressure_plate",      "acacia_pressure_plate"),
+            BlockAlt("sign",                "acacia_sign"),
+            BlockAlt("slab",                "acacia_slab"),
+            BlockAlt("stairs",              "acacia_stairs"),
+            BlockAlt("trapdoor",            "acacia_trapdoor"),
+            BlockAlt("wall_hanging_sign",   "acacia_wall_hanging_sign"),
+            BlockAlt("wall_sign",           "acacia_wall_sign")
+        ]
+    )
+]

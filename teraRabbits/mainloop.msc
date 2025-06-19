@@ -7,5 +7,5 @@
 @done
 
 # Time out
-@player &6&lTeraRabbits timed out. Have a hoppy day!
+@var teraRabbitsUtils::log("TeraRabbits timed out. Have a hoppy day!")
 @var ghastEntity.setHealth(0.0d)

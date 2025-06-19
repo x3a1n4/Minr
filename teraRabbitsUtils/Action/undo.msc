@@ -1,0 +1,5 @@
+@using teraRabbitsUtils
+
+@for BlockChange b in this.allBlocksChanged
+    @var b.revert()
+@done

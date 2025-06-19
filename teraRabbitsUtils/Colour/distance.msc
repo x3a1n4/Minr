@@ -1,0 +1,4 @@
+@using teraRabbitsUtils
+
+# Green is more important
+@return Vector3(this.r, 2 * this.g, this.b).distanceSq(Vector3(other.r, 2 * other.g, other.b))

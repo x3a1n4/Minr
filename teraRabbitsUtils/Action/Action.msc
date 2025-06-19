@@ -1,0 +1,4 @@
+@using teraRabbitsUtils
+
+@var this.allBlocksChanged = BlockChange[]
+@var actionList.append(this)

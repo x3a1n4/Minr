@@ -16,14 +16,16 @@
 @define Int size = itemName.split("[")[1].split("]")[0]
 @define String command = itemName.split("[")[0].trim().toLowerCase()
 
+@using teraRabbitsTools
+
 # Check if size is too big
 @if (size > 5)
     @player &6&lTeraRabbits: Size too big! Must be a maximum of 5
 @elseif (size < 0) 
     @player &6&lTeraRabbits: Invalid size!
 @else
-    @if (command == "Select Block")
-        @var selectBlock(targetBlock)
+    @if (command == "Set Single Pattern")
+        @var selectSingleBlockPattern(targetBlock)
     @elseif (command == "Sphere")
         @var sphere(targetBlock, size)
     @elseif (command == "Smooth")
@@ -42,5 +44,7 @@
         @var undo()
     @elseif (command == "Spawn Rabbit")
         @var spawnRabbit(targetBlock)
+    @else
+        @var replace(targetBlock, playerHeldItem)
     @fi
 @fi

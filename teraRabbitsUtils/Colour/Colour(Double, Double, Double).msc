@@ -1,0 +1,6 @@
+@using teraRabbitsUtils
+
+@var this.r = r
+@var this.g = g
+@var this.b = b
+@var this.a = 255

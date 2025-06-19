@@ -1,0 +1,3 @@
+@using teraRabbitsUtils
+
+@var block.getLocation().set(this.originalBlock)

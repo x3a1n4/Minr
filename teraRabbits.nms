@@ -10,38 +10,107 @@
 
     # The ghast click function
     onGhastClick(Player player)
+@endnamespace
 
-    @namespace tools
-        # MVP: 
-        #   Tool to select pattern
-        #   Shulker box named mask in hotbar will limit mask
-        
-        # sets block selection
-        selectBlock(Block targetBlock)
-        Block selectedBlock
-        # Create sphere at targetBlock
-        sphere(Block targetBlock, Int size)
-        # Smooth area around targetBlock
-        smooth(Block targetBlock, Int size)
-        # set cubiod selection
-        cubiodSelect(Block targetBlock)
-        # Set blocks in selection (rclick on block)
-        set()
-        # Copy to clipboard from block location
-        copy(Block targetBlock)
-        # Paste clipboard at block location
-        paste(Block targetBlock)
-        # Stack selection in facing direction
-        stack(Player targetPlayer)
+@namespace teraRabbitsTools
+    # MVP: 
+    #   Tool to select pattern
+    #   Shulker box named mask in hotbar will limit mask
+    
+    # sets block selection
+    selectSingleBlockPattern(Block targetBlock)
+    teraRabbitsUtils::Pattern pattern
+    # Create sphere at targetBlock
+    sphere(Block targetBlock, Int size)
+    # Smooth area around targetBlock
+    smooth(Block targetBlock, Int size)
+    # set cubiod selection
+    cubiodSelect(Block targetBlock)
+    # Extend cuboid to encompass target block
+    cubiodExtend(Block targetBlock)
+    # Set blocks in selection (rclick on block)
+    set(Block targetBlock)
+    # Copy to clipboard from block location
+    copy(Block targetBlock)
+    # Paste clipboard at block location
+    paste(Block targetBlock)
+    # Stack selection in facing direction
+    stack(Player targetPlayer)
 
-        # undo
+    # Replace the block at the target block
+    replace(Block targetBlock, Item heldItem)
+
+    # undo
+    undo()
+
+    # Spawn invisible rabbit (at top middle of block)
+    spawnRabbit(Block targetBlock)
+@endnamespace
+
+@namespace teraRabbitsUtils
+    @class Colour
+        # Default constructor
+        Colour(Double r, Double g, Double b)
+        Colour(Double r, Double g, Double b, Double a)
+        Double r
+        Double g
+        Double b
+        Double a
+
+        distance(teraRabbitsUtils::Colour other)
+    @endclass
+
+    @class Pattern
+        # Sets a pattern with a get method
+        # Will just be a single block for now
+        # But new constructors could add cool patterns in the future
+        Pattern(String[] blocks, String type)
+        String[] blocks
+        String type
+
+        String get(BlockLocation targetLocation)
+    @endclass
+
+
+    @class BlockAlt
+        # Constructors
+        BlockAlt(String type, String block)
+        String type
+        String block
+    @endclass
+
+    @class BlockChange
+        # Sets the block to the given "to"
+        BlockChange(Block block, String to)
+        Block block
+        String originalBlock
+        String to
+
+        revert()
+    @endclass
+
+    teraRabbitsUtils::Action[] actionList
+    @class Action
+        # All tool usages should be logged through Actions, so that they can be undone
+        Action(String name)
+        String name
+        teraRabbitsUtils::BlockChange[] allBlocksChanged
+
+        # Add a block change to this action
+        add(teraRabbitsUtils::BlockChange change)
         undo()
+    @endclass
 
-        # Spawn invisible rabbit (at top middle of block)
-        spawnRabbit(Block targetBlock)
-    @endnamespace
+    @class BlockData
+        # Constructors
+        BlockData(String block, Colour colour)
+        BlockData(String block, Colour colour, BlockAlt[] alts)
+        String block
+        Colour colour
+        teraRabbitsUtils::BlockAlt[] alts
+    @endclass
 
-    @namespace utils
+    log(String message)
 
-    @endnamespace
+    BlockData[] blockData
 @endnamespace

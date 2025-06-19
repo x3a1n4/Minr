@@ -1,0 +1,6 @@
+@using teraRabbitsUtils
+
+# Verify that the change is valid
+# TODO
+# Then:
+@var this.allBlocksChanged.append(change)

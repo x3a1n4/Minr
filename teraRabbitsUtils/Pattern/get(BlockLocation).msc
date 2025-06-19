@@ -1,0 +1,5 @@
+@using teraRabbitsUtils
+
+@if (this.type = "SAMPLE")
+    @return this.blocks.shuffle()[0]
+@fi

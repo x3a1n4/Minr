@@ -1,0 +1,4 @@
+# Undo the last action
+@define teraRabbitsUtils::Action action = actionList.pop()
+@var action.undo()
+@var teraRabbitsUtils::log("Undid {{action.name}}")

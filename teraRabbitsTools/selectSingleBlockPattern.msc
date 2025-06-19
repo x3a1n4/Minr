@@ -1,0 +1,1 @@
+@var teraRabbitsTools::pattern = teraRabbitsUtils::Pattern(String[targetBlock.getBlockType()], "SAMPLE")

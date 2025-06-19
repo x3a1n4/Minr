@@ -1,6 +1,6 @@
 @using teraRabbits
 
-@player &6&lStarting teraRabbits!
+@var teraRabbitsUtils::log("Starting TeraRabbits!")
 @var targetPlayer = player
 
 # Summon a massive ghast at player location, and attach the script to it

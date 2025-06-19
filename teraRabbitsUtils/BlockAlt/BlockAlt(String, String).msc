@@ -1,0 +1,4 @@
+@using teraRabbitsUtils
+
+@var this.type = type
+@var this.block = block
