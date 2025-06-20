@@ -22,6 +22,8 @@
     teraRabbitsUtils::Pattern pattern
     # Create sphere at targetBlock
     sphere(Block targetBlock, Int size)
+    # Paint at the target block (don't replace air, use block replacements)
+    paint(Block targetBlock, Int size)
     # Smooth area around targetBlock
     smooth(Block targetBlock, Int size)
     # Pull area towards player (like spikes)

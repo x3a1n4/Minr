@@ -8,7 +8,7 @@
 # This is used for type variants, that's it
 
 # Should be marked as final
-@define final BlockData[] blockData = BlockData[
+@define BlockData[] blockData = final BlockData[
     BlockData("acacia_planks", Colour(168.0, 90.0, 50.0, 255.0), 
         BlockAlt[
             BlockAlt("button",              "acacia_button"),

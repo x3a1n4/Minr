@@ -1,0 +1,17 @@
+# create a sphere around the target block of size n
+@using teraRabbitsUtils
+
+@fast
+
+@define Action thisAction = Action("paint [size {{size}}]")
+
+# Check if not air
+@for Int x in list::range(-n, n)
+    @for Int y in list::range(-n, n)
+        @for Int z in list::range(-n, n)
+            @var thisAction.add(BlockChange(targetBlock.getRelative(x, y, z)), teraRabbitsTools::pattern.get(targetBlock.getRelative(x, y, z).getLocation()))
+        @done
+    @done
+@done
+
+@var log("Painted")
