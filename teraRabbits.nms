@@ -24,6 +24,10 @@
     sphere(Block targetBlock, Int size)
     # Smooth area around targetBlock
     smooth(Block targetBlock, Int size)
+    # Pull area towards player (like spikes)
+    pull(Block targetBlock, Player targetPlayer, Int size)
+    # Flatten area (like a mesa)
+    flatten(Block targetBlock, Int size)
     # set cubiod selection
     cubiodSelect(Block targetBlock)
     # Extend cuboid to encompass target block
