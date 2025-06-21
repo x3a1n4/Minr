@@ -1,0 +1,6 @@
+# trySetBlock(teraRabbitsTools::Action action, Block location, String block)
+
+# TODO: check mask
+# TODO: check blocks not identical
+@using teraRabbitsUtils
+@var action.add(BlockChange(location, block))

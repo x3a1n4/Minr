@@ -1,0 +1,8 @@
+@using teraRabbitsUtils
+
+@if (this.type == "SAMPLE")
+    # Shuffle blocks to get one at random
+    # TODO: use a faster implementation
+    @var this.blocks.shuffle() 
+    @return this.blocks[0]
+@fi

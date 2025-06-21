@@ -1,69 +1,14 @@
-@namespace teraRabbits
-    # The main loop
-    mainloop()
-    enableClickHandler(Player player)
-    disableClickHandler(Player player)
-    # The player using the scripts
-    Player targetPlayer
-    # The ghast that holds onGhastClick
-    Entity ghastEntity
-
-    # The ghast click function
-    onGhastClick(Player player)
-@endnamespace
-
-@namespace teraRabbitsTools
-    # MVP: 
-    #   Tool to select pattern
-    #   Shulker box named mask in hotbar will limit mask
-    
-    # sets block selection
-    selectSingleBlockPattern(Block targetBlock)
-    teraRabbitsUtils::Pattern pattern
-    # Create sphere at targetBlock
-    sphere(Block targetBlock, Int size)
-    # Paint at the target block (don't replace air, use block replacements)
-    paint(Block targetBlock, Int size)
-    # Smooth area around targetBlock
-    smooth(Block targetBlock, Int size)
-    # Pull area towards player (like spikes)
-    pull(Block targetBlock, Player targetPlayer, Int size)
-    # Flatten area (like a mesa)
-    flatten(Block targetBlock, Int size)
-    # set cubiod selection
-    cubiodSelect(Block targetBlock)
-    # Extend cuboid to encompass target block
-    cubiodExtend(Block targetBlock)
-    # Set blocks in selection (rclick on block)
-    set(Block targetBlock)
-    # Copy to clipboard from block location
-    copy(Block targetBlock)
-    # Paste clipboard at block location
-    paste(Block targetBlock)
-    # Stack selection in facing direction
-    stack(Player targetPlayer)
-
-    # Replace the block at the target block
-    replace(Block targetBlock, Item heldItem)
-
-    # undo
-    undo()
-
-    # Spawn invisible rabbit (at top middle of block)
-    spawnRabbit(Block targetBlock)
-@endnamespace
-
 @namespace teraRabbitsUtils
     @class Colour
         # Default constructor
-        Colour(Double r, Double g, Double b)
-        Colour(Double r, Double g, Double b, Double a)
-        Double r
-        Double g
-        Double b
-        Double a
+        Colour(Float r, Float g, Float b)
+        Colour(Float r, Float g, Float b, Float a)
+        Float r
+        Float g
+        Float b
+        Float a
 
-        distance(teraRabbitsUtils::Colour other)
+        Double distance(teraRabbitsUtils::Colour other)
     @endclass
 
     @class Pattern
@@ -71,12 +16,12 @@
         # Will just be a single block for now
         # But new constructors could add cool patterns in the future
         Pattern(String[] blocks, String type)
+        Pattern(String[] blocks, Double[] weights, String type)
         String[] blocks
         String type
 
         String get(BlockLocation targetLocation)
     @endclass
-
 
     @class BlockAlt
         # Constructors
@@ -104,6 +49,8 @@
 
         # Add a block change to this action
         add(teraRabbitsUtils::BlockChange change)
+        # get number of blocks changed
+        Int length()
         undo()
     @endclass
 
@@ -116,7 +63,68 @@
         teraRabbitsUtils::BlockAlt[] alts
     @endclass
 
+    initializeBlockData()
+    # Try to set a block given an action
+    trySetBlock(teraRabbitsUtils::Action action, Block location, String block)
     log(String message)
 
+    # Get the block relative to a target block
+    Block getRelativeBlock(Block block, Int x, Int y, Int z)
+
     BlockData[] bd
+@endnamespace
+
+@namespace teraRabbitsTools
+    # MVP: 
+    #   Tool to select pattern
+    #   Shulker box named mask in hotbar will limit mask
+    
+    # sets block selection
+    teraRabbitsUtils::Pattern pattern
+    selectSingleBlockPattern(Block targetBlock)
+    # Create sphere at targetBlock
+    sphere(Block targetBlock, Int size)
+    # Paint at the target block (don't replace air, use block replacements)
+    paint(Block targetBlock, Int size)
+    # Smooth area around targetBlock
+    smooth(Block targetBlock, Int size)
+    # Pull area towards player (like spikes)
+    pull(Block targetBlock, Player targetPlayer, Int size)
+    # Flatten area (like a mesa)
+    flatten(Block targetBlock, Int size)
+    # set cubiod selection
+    cuboidSelect(Block targetBlock)
+    # Extend cuboid to encompass target block
+    cuboidExtend(Block targetBlock)
+    # Set blocks in selection (rclick on block)
+    set(Block targetBlock)
+    # Copy to clipboard from block location
+    copy(Block targetBlock)
+    # Paste clipboard at block location
+    paste(Block targetBlock)
+    # Stack selection in facing direction
+    stack(Player targetPlayer)
+
+    # Replace the block at the target block
+    replace(Block targetBlock, Item heldItem)
+
+    # undo
+    undo()
+
+    # Spawn invisible rabbit (at top middle of block)
+    spawnRabbit(Block targetBlock)
+@endnamespace
+
+@namespace teraRabbits
+    # The main loop
+    mainloop()
+    enableClickHandler(Player player)
+    disableClickHandler(Player player)
+    # The player using the scripts
+    Player targetPlayer
+    # The ghast that holds onGhastClick
+    Entity ghastEntity
+
+    # The ghast click function
+    onGhastClick(Player player)
 @endnamespace

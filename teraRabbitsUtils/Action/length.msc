@@ -1,0 +1,6 @@
+@using teraRabbitsUtils
+
+# get number of blocks changed
+# Int length()
+
+@return this.allBlocksChanged.length()

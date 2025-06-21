@@ -1,0 +1,5 @@
+@using teraRabbitsUtils
+
+# TODO: add weights
+@var this.blocks = blocks
+@var this.type = type

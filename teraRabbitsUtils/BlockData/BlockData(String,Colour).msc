@@ -1,0 +1,5 @@
+@using teraRabbitsUtils
+
+@var this.block = block
+@var this.colour = colour
+@var this.alts = BlockAlt[]

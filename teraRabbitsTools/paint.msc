@@ -6,10 +6,14 @@
 @define Action thisAction = Action("paint [size {{size}}]")
 
 # Check if not air
-@for Int x in list::range(-n, n)
-    @for Int y in list::range(-n, n)
-        @for Int z in list::range(-n, n)
-            @var thisAction.add(BlockChange(targetBlock.getRelative(x, y, z)), teraRabbitsTools::pattern.get(targetBlock.getRelative(x, y, z).getLocation()))
+@for Int x in list::range(-size, size)
+    @for Int y in list::range(-size, size)
+        @for Int z in list::range(-size, size)
+            @if ! getRelativeBlock(targetBlock, x, y, z).getBlockType().toLowerCase().contains("air")
+                @define Block from = getRelativeBlock(targetBlock, x, y, z)
+                @define String to = teraRabbitsTools::pattern.get(from.getLocation())
+                @var trySetBlock(thisAction, from, to)
+            @fi
         @done
     @done
 @done

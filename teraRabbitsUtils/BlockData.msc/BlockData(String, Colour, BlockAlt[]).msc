@@ -1,5 +1,0 @@
-@using teraRabbitsUtils
-
-@var this.type = type
-@var this.block = block
-@var this.alts = alts

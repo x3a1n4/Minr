@@ -1,0 +1,4 @@
+# Get the block relative to a target block
+# Block getRelativeBlock(Block block, Int x, Int y, Int z)
+
+@return Block(block.getX() + x, block.getY() + y, block.getZ() + z, block.getWorld())

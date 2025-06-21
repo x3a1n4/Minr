@@ -1,0 +1,4 @@
+# Replace the block at the target block
+# replace(Block targetBlock, Item heldItem)
+
+@var targetBlock.getLocation().set(heldItem.getItemType())

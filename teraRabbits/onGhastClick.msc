@@ -13,7 +13,7 @@
 @define Item playerHeldItem = player.getItemInMainHand()
 @define String itemType = playerHeldItem.getItemType()
 @define String itemName = playerHeldItem.getDisplayName()
-@define Int size = itemName.split("[")[1].split("]")[0]
+@define Int size = Int(itemName.split("[")[1].split("]")[0])
 @define String command = itemName.split("[")[0].trim().toLowerCase()
 
 @using teraRabbitsTools
@@ -26,29 +26,41 @@
 @else
     @if (command == "Set Single Pattern")
         @var selectSingleBlockPattern(targetBlock)
+
     @elseif (command == "Sphere")
         @var sphere(targetBlock, size)
+    @elseif (command == "Paint")
+        @var paint(targetBlock, size)
+
     @elseif (command == "Smooth")
         @var smooth(targetBlock, size)
     @elseif (command == "Pull")
         @var pull(targetBlock, player, size)
     @elseif (command == "Flatten")
         @var flatten(targetBlock, size)
+
     @elseif (command == "Cuboid Select")
-        @var cubiodSelect(targetBlock)
+        @var cuboidSelect(targetBlock)
+    @elseif (command == "Cuboid Extend")
+        @var cuboidExtend(targetBlock)
+
     @elseif (command == "Set")
-        @var set()
+        @var set(targetBlock)
     @elseif (command == "Copy")
         @var copy(targetBlock)
     @elseif (command == "Paste")
         @var paste(targetBlock)
+    
     @elseif (command == "Stack")
         @var stack(player)
+
     @elseif (command == "Undo")
         @var undo()
+
     @elseif (command == "Spawn Rabbit")
         @var spawnRabbit(targetBlock)
     @else
+        # By default, just replace block
         @var replace(targetBlock, playerHeldItem)
     @fi
 @fi
