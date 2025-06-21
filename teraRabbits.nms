@@ -118,5 +118,5 @@
 
     log(String message)
 
-    BlockData[] blockData
+    BlockData[] bd
 @endnamespace
