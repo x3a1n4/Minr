@@ -3,4 +3,4 @@
 # TODO: check mask
 # TODO: check blocks not identical
 @using teraRabbitsUtils
-@var action.add(BlockChange(location, block))
+@var action.add(BlockChange(location, getVanilla(block)))

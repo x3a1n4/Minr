@@ -1,5 +1,8 @@
 # Replace the block at the target block
 # replace(Block targetBlock, Item heldItem)
 
-@var targetBlock.getLocation().set(heldItem.getItemType())
-@var teraRabbitsUtils::log("Set block {{targetBlock}} to {{heldItem.getItemType()}}")
+@using teraRabbitsUtils
+
+# TODO: make break and replace the block (for block noises)
+@var targetBlock.getLocation().set(getVanilla(heldItem.getItemType()))
+# @var teraRabbitsUtils::log("Set block {{targetBlock}} to {{heldItem.getItemType()}}")

@@ -70,6 +70,8 @@
 
     # Get the block relative to a target block
     Block getRelativeBlock(Block block, Int x, Int y, Int z)
+    # convert a block type to its vanilla variantt
+    String getVanilla(String type)
 
     BlockData[] bd
 @endnamespace

@@ -17,7 +17,7 @@
     @var itemName = "Replace"
 @fi
 # Debug statement
-@var teraRabbitsUtils::log("Item: {{itemType}}, Name: {{itemName}}, Target Block: {{targetBlock}}")
+# @var teraRabbitsUtils::log("Item: {{itemType}}, Name: {{itemName}}, Target Block: {{targetBlock}}")
 
 # Get size, command
 @define Int size = 0
@@ -28,7 +28,7 @@
 @fi
 
 # Debug statement
-@var teraRabbitsUtils::log("Command: {{command}}, Size: {{size}}")
+# @var teraRabbitsUtils::log("Command: {{command}}, Size: {{size}}")
 
 @using teraRabbitsTools
 # Check if size is too big
