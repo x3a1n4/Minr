@@ -113,6 +113,9 @@
 
     # Spawn invisible rabbit (at top middle of block)
     spawnRabbit(Block targetBlock)
+
+    # End the session
+    endSession(Player targetPlayer)
 @endnamespace
 
 @namespace teraRabbits

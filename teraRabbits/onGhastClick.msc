@@ -4,20 +4,33 @@
 
 # Get the block we're looking at
 @define Block targetBlock = player.getTargetBlock(120)
-@player {{targetBlock.getLocation()}}
+# @player {{targetBlock.getLocation()}}
 
 # Just set it to be a block for now
 # @bypass /setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:red_concrete
 
 # Run functions based on tools named things
 @define Item playerHeldItem = player.getItemInMainHand()
-@define String itemType = playerHeldItem.getItemType()
+@define String itemType = playerHeldItem.getItemType().toLowerCase()
 @define String itemName = playerHeldItem.getDisplayName()
-@define Int size = Int(itemName.split("[")[1].split("]")[0])
-@define String command = itemName.split("[")[0].trim().toLowerCase()
+@if itemName == null
+    @var itemName = "Replace"
+@fi
+# Debug statement
+@var teraRabbitsUtils::log("Item: {{itemType}}, Name: {{itemName}}, Target Block: {{targetBlock}}")
+
+# Get size, command
+@define Int size = 0
+@define String command = itemName
+@if itemName.matches("\[.*\]")
+    @var size = Int(itemName.split("\[")[1].split("\]")[0])
+    @var command = itemName.split("\[")[0].trim().toLowerCase()
+@fi
+
+# Debug statement
+@var teraRabbitsUtils::log("Command: {{command}}, Size: {{size}}")
 
 @using teraRabbitsTools
-
 # Check if size is too big
 @if (size > 5)
     @player &6&lTeraRabbits: Size too big! Must be a maximum of 5
@@ -56,6 +69,9 @@
 
     @elseif (command == "Undo")
         @var undo()
+
+    @elseif (command == "End")
+        @var endSession(player)
 
     @elseif (command == "Spawn Rabbit")
         @var spawnRabbit(targetBlock)

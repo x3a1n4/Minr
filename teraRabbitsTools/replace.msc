@@ -2,3 +2,4 @@
 # replace(Block targetBlock, Item heldItem)
 
 @var targetBlock.getLocation().set(heldItem.getItemType())
+@var teraRabbitsUtils::log("Set block {{targetBlock}} to {{heldItem.getItemType()}}")
