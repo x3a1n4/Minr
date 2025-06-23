@@ -1,6 +1,12 @@
-# Int hash(String s)
+# Long toNum(String s)
 
-# Simple ax+b hashing
-# a and b chosen because they "look prime"
 @using stringHashMap
-@return (353 * toNum(s) + 479) % arraySize
+
+@define Long out = 0
+@for Int i in list::range(0, s.length())
+    @define String c = s.substring(i, i+1)
+    @var out = out * alphabet.length() + getCharIndex(c)
+    @var out = out % arraySize
+@done
+
+@return out

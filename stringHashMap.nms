@@ -30,7 +30,6 @@
     @endclass
 
     Long hash(String s)
-    Long toNum(String s) 
     Int getCharIndex(String char)
     
     # List of all ascii characters, in order
