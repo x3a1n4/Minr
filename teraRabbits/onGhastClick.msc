@@ -22,9 +22,10 @@
 # Get size, command
 @define Int size = 0
 @define String command = itemName
-@if itemName.matches("\[.*\]")
+# @var teraRabbitsUtils::log("ItemName: {{itemName}}")
+@if itemName.matches(".*\[.*\].*")
     @var size = Int(itemName.split("\[")[1].split("\]")[0])
-    @var command = itemName.split("\[")[0].trim().toLowerCase()
+    @var command = itemName.split("\[")[0].trim()
 @fi
 
 # Debug statement
@@ -33,9 +34,9 @@
 @using teraRabbitsTools
 # Check if size is too big
 @if (size > 5)
-    @player &6&lTeraRabbits: Size too big! Must be a maximum of 5
+    @var teraRabbitsUtils::log("Size too big! Must be a maximum of 5")
 @elseif (size < 0) 
-    @player &6&lTeraRabbits: Invalid size!
+    @player teraRabbitsUtils::log("Invalid size!")
 @else
     @if (command == "Set Single Pattern")
         @var selectSingleBlockPattern(targetBlock)
@@ -44,6 +45,8 @@
         @var sphere(targetBlock, size)
     @elseif (command == "Paint")
         @var paint(targetBlock, size)
+    @elseif (command == "Erase")
+        @var erase(targetBlock, size)
 
     @elseif (command == "Smooth")
         @var smooth(targetBlock, size)

@@ -9,10 +9,13 @@
 @for Int x in list::range(-size, size)
     @for Int y in list::range(-size, size)
         @for Int z in list::range(-size, size)
-            @if ! getRelativeBlock(targetBlock, x, y, z).getBlockType().toLowerCase().contains("air")
-                @define Block from = getRelativeBlock(targetBlock, x, y, z)
-                @define String to = teraRabbitsTools::pattern.get(from.getLocation())
-                @var trySetBlock(thisAction, from, to)
+            @if targetBlock.getBlockType() != "AIR"
+                @define BlockLocation from = getRelativeBlock(targetBlock, x, y, z).getLocation()
+                @define String to = teraRabbitsTools::pattern.get(from)
+
+                @if from.asBlockVector3().distance(targetBlock.getLocation().asBlockVector3()) < size
+                    @var trySetBlock(thisAction, from, to)
+                @fi
             @fi
         @done
     @done

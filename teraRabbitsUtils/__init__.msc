@@ -1,2 +1,3 @@
 @using teraRabbitsUtils
 @var initializeBlockData()
+@var actionList = Action[]

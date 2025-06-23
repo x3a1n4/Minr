@@ -3,6 +3,7 @@
 
 @using teraRabbitsUtils
 
-# TODO: make break and replace the block (for block noises)
-@var targetBlock.getLocation().set(getVanilla(heldItem.getItemType()))
+# TODO: make check the blockdata array
+@bypass /execute in minecraft:{{teraRabbitsGlobals::world}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{getVanilla(heldItem.getItemType())}} destroy
+# @var targetBlock.getLocation().set(getVanilla(heldItem.getItemType()))
 # @var teraRabbitsUtils::log("Set block {{targetBlock}} to {{heldItem.getItemType()}}")

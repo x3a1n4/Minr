@@ -1,6 +1,8 @@
-# trySetBlock(teraRabbitsTools::Action action, Block location, String block)
+# trySetBlock(teraRabbitsTools::Action action, BlockLocation location, String block)
 
 # TODO: check mask
 # TODO: check blocks not identical
 @using teraRabbitsUtils
-@var action.add(BlockChange(location, getVanilla(block)))
+
+@define Block origBlock = Block(location)
+@var action.add(BlockChange(origBlock, getVanilla(block)))

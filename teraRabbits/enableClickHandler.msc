@@ -1,19 +1,25 @@
 @using teraRabbits
 
-@var teraRabbitsUtils::log("Starting TeraRabbits!")
 @var targetPlayer = player
+
+@var teraRabbitsGlobals::world = player.getWorld().toLowerCase()
+# @var teraRabbitsUtils::log("{{teraRabbitsGlobals::world}}")
 
 # Summon a massive ghast at player location, and attach the script to it
 @define String targetName = "{{player.getName()}} teraRabbits target"
-@bypass /summon ghast ~ ~ ~ {ExplosionPower:0,CustomName:"{{targetName}}",NoAI:1b,PersistenceRequired:1b,Silent:1b,active_effects:[{id:invisibility,duration:999999,show_particles:0b}],attributes:[{id:scale,base:2f}]}
+@bypass /execute in minecraft:{{teraRabbitsGlobals::world}} run summon ghast ~ ~ ~ {ExplosionPower:0,CustomName:"{{targetName}}",NoAI:1b,PersistenceRequired:1b,Silent:1b,active_effects:[{id:invisibility,duration:999999,show_particles:0b}],attributes:[{id:scale,base:2f}]}
 
 # Get the ghast
-@var ghastEntity = Entity(Int(player.getX()), Int(player.getY()), Int(player.getZ()), player.getWorld())
+@var ghastEntity = Entity(Int(player.getX()), Int(player.getY()), Int(player.getZ()), teraRabbitsGlobals::world)
 
 # @player {{ghastEntity}}, {{ghastEntity.getUniqueId()}}
 
 # Import script to ghast
 @bypass /script import entity {{ghastEntity.getUniqueId()}} https://paste.minr.org/tacuwukire
 
+# Delay, so that import finishes
+# @delay 20
+
 # Start mainloop for 30 seconds
+@var teraRabbitsUtils::log("Starting TeraRabbits!")
 @var mainloop()

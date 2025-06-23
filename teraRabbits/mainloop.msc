@@ -2,8 +2,15 @@
 
 # Copy ghast to player's location
 @for Int i in list::range(1, 1000)
-    @var ghastEntity.teleport(targetPlayer.getPosition())
-    @delay 5
+    @for Int j in list::range(1, 3)
+        @if "{{ghastEntity}}" == "null"
+            @var teraRabbitsUtils::log("Ghast is null, TeraRabbits ended.")
+            @return
+        @fi
+
+        @var ghastEntity.teleport(targetPlayer.getPosition())
+        @delay 3
+    @done
 @done
 
 # Time out

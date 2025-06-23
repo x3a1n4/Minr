@@ -1,3 +1,8 @@
+@namespace teraRabbitsGlobals
+    # The world that this was enabled in
+    String world
+@endnamespace
+
 @namespace teraRabbitsUtils
     @class Colour
         # Default constructor
@@ -51,6 +56,7 @@
         add(teraRabbitsUtils::BlockChange change)
         # get number of blocks changed
         Int length()
+        # undo this action
         undo()
     @endclass
 
@@ -65,7 +71,7 @@
 
     initializeBlockData()
     # Try to set a block given an action
-    trySetBlock(teraRabbitsUtils::Action action, Block location, String block)
+    trySetBlock(teraRabbitsUtils::Action action, BlockLocation location, String block)
     log(String message)
 
     # Get the block relative to a target block
@@ -88,6 +94,8 @@
     sphere(Block targetBlock, Int size)
     # Paint at the target block (don't replace air, use block replacements)
     paint(Block targetBlock, Int size)
+    # Erase in a sphere
+    erase(Block targetBlock, Int size)
     # Smooth area around targetBlock
     smooth(Block targetBlock, Int size)
     # Pull area towards player (like spikes)
