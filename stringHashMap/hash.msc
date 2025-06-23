@@ -1,0 +1,6 @@
+# Int hash(String s)
+
+# Simple ax+b hashing
+# a and b chosen because they "look prime"
+@using stringHashMap
+@return (353 * toNum(s) + 479) % arraySize

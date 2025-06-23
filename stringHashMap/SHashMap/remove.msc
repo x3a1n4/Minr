@@ -1,0 +1,14 @@
+# String remove(String key)
+@using stringHashMap
+
+@define Int id = hash(key)
+@for KeyValuePair kvp in this.hashMap[id].pairs
+    # Matching key
+    @if kvp.key == key
+        # Remove from keys array
+        @var this.keys.remove(this.keys.find(key))
+        # Remove from hashmap
+        @var this.hashMap[id].pairs.remove(this.hashMap[id].pairs.find(kvp))
+        @return kvp.value
+    @fi
+@done

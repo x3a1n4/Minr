@@ -1,0 +1,7 @@
+@using stringHashMap
+
+@var this.keys = String[]
+@var this.hashMap = KVPArrayWrapper[]
+@for Int i in list::range(0, arraySize)
+    @var this.hashMap.append(KVPArrayWrapper(KeyValuePair[KeyValuePair(null, null)]))
+@done

@@ -1,0 +1,8 @@
+# String tryGetDefault(String key, String defaultValue)
+@using stringHashMap
+
+@define String out = this.get(key)
+@if out == null
+    @return defaultValue
+@fi
+@return out

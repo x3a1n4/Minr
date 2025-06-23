@@ -1,0 +1,44 @@
+@namespace stringHashMap
+    @class KeyValuePair
+        KeyValuePair(String key, String value)
+        String key
+        String value
+    @endclass
+    
+    # Provides a class for multidimensional arrays
+    # I forget the name of this collision method, but it's my favourite
+    @class KVPArrayWrapper
+        KVPArrayWrapper(KeyValuePair[] pairs)
+        KeyValuePair[] pairs
+    @endclass
+
+    @class SHashMap
+        # Default
+        SHashMap()
+
+        # The map itself. Do not use this in code!
+        KVPArrayWrapper[] hashMap
+
+        # List of all keys
+        String[] keys
+
+        # Methods
+        set(String key, String value)
+        String get(String key)
+        String tryGetDefault(String key, String defaultValue)
+        String remove(String key)
+    @endclass
+
+    Long hash(String s)
+    Long toNum(String s) 
+    Int getCharIndex(String char)
+    
+    # List of all ascii characters, in order
+    String alphabet
+
+    # Size of array used. By default, set to 997
+    Int arraySize
+
+    # Unit tests
+    tests()
+@endnamespace

@@ -1,13 +1,30 @@
 @using teraRabbitsUtils
 
 # data from https://github.com/RandomGamingDev/mc_block_color_mapper/blob/main/blockmodel_avgs.csv
-
-# NOTE: add \ as line continuation in minr extension
+# TODO: update to 1.21.3
 
 # Every solid block gets a top level, any solid block variants get their own sub-levels
 # This is used for type variants, that's it
 @define BlockData[] bd = BlockData[]
 @define BlockAlt[] t = BlockAlt[]
+
+@define String[] blockTypes = String[]
+# TODO: add coral fans?
+@var blockTypes.append("button")
+@var blockTypes.append("bulb")
+@var blockTypes.append("door")
+@var blockTypes.append("fence")
+@var blockTypes.append("fence_gate")
+@var blockTypes.append("grate")
+@var blockTypes.append("hanging_sign")
+@var blockTypes.append("pressure_plate")
+@var blockTypes.append("sign")
+@var blockTypes.append("slab")
+@var blockTypes.append("stairs")
+@var blockTypes.append("trapdoor")
+@var blockTypes.append("wall")
+@var blockTypes.append("wall_hanging_sign")
+@var blockTypes.append("wall_sign")
 
 @var t.clear()
 @var t.append(BlockAlt("button",              "acacia_button"))

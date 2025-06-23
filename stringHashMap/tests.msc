@@ -1,0 +1,13 @@
+@using stringHashMap
+# Simple unit tests to assert it's working
+
+@define SHashMap testMap = SHashMap()
+@player "Setting Test Value"
+@var testMap.set("Test Value", "Success!")
+
+@player "Value at Test Value (e: 'Success!'):"
+@player testMap.get("Test Value")
+@player "Value at Bad Value (e: null):"
+@player testMap.get("Bad Value")
+@player "Value at Bad Value (tryGetDefault) (e: 'Not Found!'):"
+@player testMap.tryGetDefault("Bad Value", "Not Found!")

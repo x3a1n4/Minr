@@ -1,0 +1,3 @@
+@using stringHashMap
+
+@return alphabet.indexOf(char)

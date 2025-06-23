@@ -1,0 +1,25 @@
+# set(String key, String value)
+@using stringHashMap
+
+# check collision
+@define Int id = hash(key)
+@for KeyValuePair kvp in this.hashMap[id].pairs
+    # Matching key
+    @if kvp.key == key
+        @var kvp.value = value
+        @return
+    @fi
+
+    # New key
+    @if kvp.key == null
+        @var kvp.key = key
+        @var kvp.value = value
+
+        # Add to keys
+        @var this.keys.append(key)
+
+        # Add new terminator
+        @var this.hashMap[id].pairs.append(KeyValuePair(null, null))
+        @return
+    @fi
+@done

@@ -3,7 +3,11 @@
 
 @using teraRabbitsUtils
 
-# TODO: make check the blockdata array
-@bypass /execute in minecraft:{{teraRabbitsGlobals::world}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{getVanilla(heldItem.getItemType())}} destroy
+# Check the blockdata array
+@var String orig_block = getVanilla(targetBlock.getBlockType())
+@var String block = getVanilla(heldItem.getItemType())
+
+
+@bypass /execute in minecraft:{{teraRabbitsGlobals::world}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
 # @var targetBlock.getLocation().set(getVanilla(heldItem.getItemType()))
 # @var teraRabbitsUtils::log("Set block {{targetBlock}} to {{heldItem.getItemType()}}")

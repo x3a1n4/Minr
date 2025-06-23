@@ -80,6 +80,7 @@
     String getVanilla(String type)
 
     BlockData[] bd
+    String[] blockTypes
 @endnamespace
 
 @namespace teraRabbitsTools

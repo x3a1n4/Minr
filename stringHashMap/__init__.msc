@@ -1,0 +1,5 @@
+# Set the max size
+@var stringHashMap::size = 997
+@var stringHashMap::alphabet = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+
+@var stringHashMap::tests()
