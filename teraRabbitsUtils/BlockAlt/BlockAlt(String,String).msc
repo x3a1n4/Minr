@@ -2,3 +2,4 @@
 
 @var this.type = type
 @var this.block = block
+@var blockAltLookup.set(block, type)

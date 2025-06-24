@@ -7,6 +7,24 @@
 @var String orig_block = getVanilla(targetBlock.getBlockType())
 @var String block = getVanilla(heldItem.getItemType())
 
+# Try to get a replacement
+@var String blockType = blockAltLookup.tryGetDefault(orig_block, "null")
+@if blockType != "null"
+    # Long lookup but ah well
+    @for BlockData b in bd
+        @if b.block == block
+            @for BlockAlt alt in b.alts
+                @if alt.type == blockType
+                    @var block = alt.block
+
+                    # Return here to get out of it
+                    @bypass /execute in minecraft:{{teraRabbitsGlobals::world}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
+                    @return
+                @fi
+            @done
+        @fi
+    @done
+@fi
 
 @bypass /execute in minecraft:{{teraRabbitsGlobals::world}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
 # @var targetBlock.getLocation().set(getVanilla(heldItem.getItemType()))

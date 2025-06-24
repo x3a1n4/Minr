@@ -34,6 +34,7 @@
         String type
         String block
     @endclass
+    stringHashMap::SHashMap blockAltLookup
 
     @class BlockChange
         # Sets the block to the given "to"
