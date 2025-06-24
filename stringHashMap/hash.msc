@@ -2,7 +2,7 @@
 
 @using stringHashMap
 
-@define Long out = 0
+@define Int out = 0
 @for Int i in list::range(0, s.length())
     @define String c = s.substring(i, i+1)
     @var out = out * alphabet.length() + getCharIndex(c)

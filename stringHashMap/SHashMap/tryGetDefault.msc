@@ -2,7 +2,7 @@
 @using stringHashMap
 
 @define String out = this.get(key)
-@if out == null
+@if out == "null"
     @return defaultValue
 @fi
 @return out

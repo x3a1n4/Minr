@@ -29,7 +29,7 @@
         String remove(String key)
     @endclass
 
-    Long hash(String s)
+    Int hash(String s)
     Int getCharIndex(String char)
     
     # List of all ascii characters, in order

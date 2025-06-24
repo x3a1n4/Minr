@@ -10,4 +10,5 @@
 @done
 
 # return null
-@return null
+@player "Key {{key}} not found!"
+@return "null"
