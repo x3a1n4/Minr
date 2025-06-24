@@ -1,0 +1,4 @@
+@using teraRabbitsUtils
+
+# Initialize the block map
+@var this.blocks = stringHashMap::SHashMap()

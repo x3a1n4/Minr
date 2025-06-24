@@ -1,1 +1,7 @@
-@delay 1s
+@using teraRabbitsTools
+
+@delay 10
+# Default pattern
+@var pattern = teraRabbitsUtils::Pattern(String["Stone"], "SIMPLE")
+# Default selection
+@var selection = teraRabbitsUtils::Selection()

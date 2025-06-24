@@ -1,0 +1,4 @@
+# addBlockToSelection(BlockLocation location)
+@using teraRabbitsUtils
+
+@var this.blocks.set(location.string(), "")

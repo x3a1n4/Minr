@@ -1,0 +1,4 @@
+# renderSelection()
+# For all blocks, render a single particle
+
+@for String sBlockLoc in this.blocks.keys

@@ -1,0 +1,6 @@
+@namespace eggshellUtils
+    # Returns the smaller of the two values
+    Int min(Int a, Int b)
+    # Returns the larger of the two values
+    Int max(Int a, Int b)
+@endnamespace

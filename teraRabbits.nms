@@ -46,7 +46,15 @@
         revert()
     @endclass
 
-    teraRabbitsUtils::Action[] actionList
+    @class BlockData
+        # Constructors
+        BlockData(String block, Colour colour)
+        BlockData(String block, Colour colour, BlockAlt[] alts)
+        String block
+        Colour colour
+        teraRabbitsUtils::BlockAlt[] alts
+    @endclass
+
     @class Action
         # All tool usages should be logged through Actions, so that they can be undone
         Action(String name)
@@ -60,14 +68,20 @@
         # undo this action
         undo()
     @endclass
+    teraRabbitsUtils::Action[] actionList
 
-    @class BlockData
-        # Constructors
-        BlockData(String block, Colour colour)
-        BlockData(String block, Colour colour, BlockAlt[] alts)
-        String block
-        Colour colour
-        teraRabbitsUtils::BlockAlt[] alts
+    @class Selection
+        # Default constructor
+        Selection()
+        addBlockToSelection(BlockLocation location)
+        addCuboidToSelection(BlockLocation location1, BlockLocation location2)
+        # Reset the selection - so that we only need to do initialize the hashmap once
+        resetSelection()
+
+        # Render the selection in-world
+        renderSelection()
+
+        stringHashMap::SHashMap blocks
     @endclass
 
     initializeBlockData()
@@ -91,6 +105,7 @@
     
     # sets block selection
     teraRabbitsUtils::Pattern pattern
+    teraRabbitsUtils::Selection selection
     selectSingleBlockPattern(Block targetBlock)
     # Create sphere at targetBlock
     sphere(Block targetBlock, Int size)

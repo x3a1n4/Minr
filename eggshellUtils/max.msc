@@ -1,0 +1,6 @@
+# Int max(Int a, Int b)
+@using eggshellUtils
+@if a > b
+    @return a
+@fi
+@return b

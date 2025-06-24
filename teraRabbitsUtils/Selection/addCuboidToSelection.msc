@@ -1,0 +1,15 @@
+# addCuboidToSelection(BlockLocation location1, BlockLocation location2)
+@using eggshellUtils
+
+# check if worlds match
+@if location1.getWorld() != location2.getWorld()
+    @var teraRabbitsUtils::log("Selection Corners are in different worlds!")
+@fi
+
+@for Int x in list::range(min(location1.getX(), location2.getX()), max(location1.getX(), location2.getX()) + 1)
+    @for Int y in list::range(min(location1.getY(), location2.getY()), max(location1.getY(), location2.getY()) + 1)
+        @for Int z in list::range(min(location1.getZ(), location2.getZ()), max(location1.getZ(), location2.getZ()) + 1)
+            @var this.blocks.set(location.string(), "")
+        @done
+    @done
+@done
