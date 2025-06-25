@@ -1,0 +1,8 @@
+@using teraRabbitsUtils
+# BlockChange(teraRabbitsUtils::BlockCache to)
+
+# Set values
+@var this.originalBlock = BlockCache(Block(to.location))
+
+# Change the block over
+@var to.set()

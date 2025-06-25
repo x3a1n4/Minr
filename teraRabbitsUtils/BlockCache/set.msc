@@ -1,0 +1,3 @@
+@using teraRabbitsUtils
+
+@bypass /execute in minecraft:{{getVanilla(this.location.getWorld())}} run setblock {{this.location.asBlockVector3()}} minecraft:block replace

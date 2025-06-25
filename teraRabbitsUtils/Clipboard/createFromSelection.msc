@@ -1,4 +1,6 @@
 # createFromSelection(teraRabbitsUtils::Selection selection)
+@using teraRabbitsUtils
+
 @for BlockLocation blockLoc in selection.getBlocks()
-    @var this.blocks.append(Block(blockLoc))
+    @var this.blocks.append(BlockCache(Block(blockLoc)))
 @done

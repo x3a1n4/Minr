@@ -1,11 +1,7 @@
 @using teraRabbitsUtils
 
 # Set values
-@var this.block = block
-@var this.to = to
-@var this.originalBlock = getVanilla(block.getBlockType())
-# @var log("Orig: {{this.originalBlock}}")
+@var this.originalBlock = BlockCache(block)
 
 # Change the block over
-# This implementation doesn't work, air blocks are null
-@var this.block.getLocation().set(this.to)
+@var this.block.getLocation().set(to)

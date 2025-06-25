@@ -1,5 +1,4 @@
 @using teraRabbitsUtils
 
-# This doesn't really work, since it loses blockdata. Ah well, tbd
 # @var log("Orig: {{this.originalBlock}}")
-@var this.block.getLocation().set(this.originalBlock)
+@var this.originalBlock.set()

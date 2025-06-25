@@ -1,0 +1,5 @@
+@using teraRabbitsUtils
+# Create a BlockCache from a block
+@var this.location = block.getLocation()
+@var this.type = getVanilla(block.getBlockType())
+@var this.data = block.string()
