@@ -1,2 +1,55 @@
 @using teraRabbitsUtils
-@var log("Smooth (TODO)")
+# Smooth area around targetBlock
+# smooth(Block targetBlock, Int size)
+
+# Pseudocode: cellular automata
+# Delete the block if it exists and has <=2 neighbours
+# Create the block if it does not exist and has >=3 neighbours
+
+@define BlockVector3[] adjacencies = BlockVector3[BlockVector3(1, 0, 0), BlockVector3(-1, 0, 0), BlockVector3(0, 1, 0), BlockVector3(0, -1, 0), BlockVector3(0, 0, 1), BlockVector3(0, 0,-1)]
+
+@define Action thisAction = Action("Smooth [size {{size}}]")
+
+# Setup buffer
+@define BlockLocation[] blBuffer = BlockLocation[]
+@define String[] blockTypeBuffer = String[]
+
+# Get actions to take
+@for Int x in list::range(-size, size)
+    @for Int y in list::range(-size, size)
+        @for Int z in list::range(-size, size)
+            @define Int numAdjBlocks = 0
+            @define Block from = getRelativeBlock(targetBlock, x, y, z)
+            @define String[] newBlockNames = String[]
+
+            @for BlockVector3 a in adjacencies
+                @define String blockName = getVanilla(getRelativeBlock(from, a.getX(), a.getY(), a.getZ()).getBlockType())
+                @if blockName != "air"
+                    @var numAdjBlocks = numAdjBlocks + 1
+                    @var newBlockNames.append(blockName)
+                @fi
+            @done
+            
+            @if getVanilla(from.getBlockType()) == "air"
+                # Create the block if it does not exist and has >=3 neighbours
+                @if numAdjBlocks >= 3
+                    @var blBuffer.append(from.getLocation())
+                    @var blockTypeBuffer.append(newBlockNames.shuffle()[0])
+                @fi
+            @else
+                # Delete the block if it exists and has <=2 neighbours
+                @if numAdjBlocks <= 2
+                    @var blBuffer.append(from.getLocation())
+                    @var blockTypeBuffer.append("air")
+                @fi
+            @fi
+        @done
+    @done
+@done
+
+# Change blocks
+@for Int i in list::range(0, blBuffer.length())
+    @var trySetBlock(thisAction, blBuffer[i], blockTypeBuffer[i])
+@done
+
+@var log("Smoothed {{thisAction.length()}} Blocks")
