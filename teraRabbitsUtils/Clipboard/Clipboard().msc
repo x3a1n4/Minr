@@ -1,0 +1,2 @@
+@var this.blocks = Block[]
+@var this.offset = BlockVector3(0, 0, 0)

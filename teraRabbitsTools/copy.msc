@@ -1,2 +1,6 @@
-@using teraRabbitsUtils
-@var log("Copy (TODO)")
+@using teraRabbitsTools
+
+@var clipboard = Clipboard()
+@var clipboard.createFromSelection(selection)
+@var clipboard.offset = targetBlock.getLocation().asBlockVector3()
+@var log("Copied Selection")

@@ -1,2 +1,8 @@
 @using teraRabbitsUtils
-@var log("Set (TODO)")
+
+@define Action thisAction = Action("Set")
+@for BlockLocation block in teraRabbitsTools::selection.getBlocks()
+    @var trySetBlock(thisAction, block, teraRabbitsTools::pattern.get(block))
+@done
+
+@var log("Set {{thisAction.length()}} Blocks")

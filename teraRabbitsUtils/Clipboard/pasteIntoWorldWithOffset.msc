@@ -1,0 +1,7 @@
+# pasteIntoWorldWithOffset(teraRabbitsUtils::Action action, BlockVector3 offset, Boolean ignoreAir)
+@using teraRabbitsUtils
+@for Block block in this.blocks
+    @if ! (ignoreAir && getVanilla(block.getBlockType()) == "air")
+        @var trySetBlock(action, getRelativeBlock(b, offset.getX() - clipboard.offset.getX(), offset.getY() - clipboard.offset.getY(), offset.getZ() - clipboard.offset.getZ()).getLocation(), getVanilla(block.getBlockType()))
+    @fi
+@done

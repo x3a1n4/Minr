@@ -77,6 +77,7 @@
         addCuboidToSelection(BlockLocation location1, BlockLocation location2)
         # Reset the selection - so that we only need to do initialize the hashmap once
         resetSelection()
+        BlockLocation[] getBlocks()
 
         # Render the selection in-world
         renderSelection()
@@ -90,7 +91,7 @@
         Clipboard()
         createFromSelection(teraRabbitsUtils::Selection selection)
         # If Ignore Air true, will ignore air blocks
-        pasteIntoWorldWithOffset(BlockVector3 offset, Boolean ignoreAir)
+        pasteIntoWorldWithOffset(teraRabbitsUtils::Action action, BlockVector3 offset, Boolean ignoreAir)
         # Rotates in Y by degrees
         # Not fully implemented
         rotateY(BlockVector3 pivot, Double degrees)
@@ -99,6 +100,8 @@
         flip(BlockVector3 pivot, String axis)
 
         Block[] blocks
+        # Offset of copy position
+        BlockVector3 offset
     @endclass
 
     initializeBlockData()
@@ -149,7 +152,7 @@
     # Paste clipboard at block location
     paste(Block targetBlock)
     # Stack selection in facing direction
-    stack(Player targetPlayer)
+    stack(Player targetPlayer, Int size)
 
     # Replace the block at the target block
     replace(Block targetBlock, Item heldItem)

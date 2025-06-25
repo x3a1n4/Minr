@@ -68,7 +68,7 @@
         @var paste(targetBlock)
     
     @elseif (command == "Stack")
-        @var stack(player)
+        @var stack(player, size)
 
     @elseif (command == "Undo")
         @var undo()

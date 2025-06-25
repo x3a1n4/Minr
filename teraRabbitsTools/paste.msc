@@ -1,2 +1,6 @@
 @using teraRabbitsUtils
-@var log("Paste (TODO)")
+
+@define Action thisAction = Action("Paste")
+@var teraRabbitsTools::clipboard.pasteIntoWorldWithOffset(thisAction, targetBlock.getLocation().asBlockVector3(), true)
+
+@var log("Pasted {{thisAction.length()}} Blocks")
