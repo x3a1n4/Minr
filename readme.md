@@ -32,8 +32,8 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 | `Paint [size]`   | Applies the active pattern to all non-air blocks within a radius of`[size]` |
 | `Sphere [size]`  | Erases a sphere of size `[size]`                                            |
 | `Smooth [size]`  | Smooths out terrain in a radius of `[size]`                                 |
-| `Pull [size]`    | Pulls terrain towards the player (not implemented)                          |
-| `Flatten [size]` | Flattens terrain around the targeted block (not implemented)                |
+| `Pull [size]`    | Pulls terrain towards the player in a radius of `[size]`                    |
+| `Flatten [size]` | Flattens terrain around the targeted block in a radius of `[size]`          |
 
 ### Selections
 | Item Name       | Command Details                                                     |

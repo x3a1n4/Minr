@@ -1,2 +1,38 @@
 @using teraRabbitsUtils
-@var log("Flatten (TODO)")
+# Flatten area (like a mesa)
+# Should this also handle vertical walls? No, that sounds hard
+
+# flatten(Block targetBlock, Int size)
+@define Action thisAction = Action("Flatten [size {{size}}]")
+
+# Set up buffer
+@define BlockLocation[] blBuffer = BlockLocation[]
+@define String[] blockTypeBuffer = String[]
+
+@for Int x in list::range(-size, size)
+    @for Int y in list::range(-size, size)
+        @for Int z in list::range(-size, size)
+            @define Block from = getRelativeBlock(targetBlock, x, y, z)
+
+            @define Block above = getRelativeBlock(from, 0, 1, 0)
+            @if getVanilla(above.getBlockType()) == "air"
+                @if from.getY() < targetBlock.getY()
+                    # It's lower, add block above self
+                    @var blBuffer.append(above.getLocation())
+                    @var blockTypeBuffer.append(getVanilla(from.getBlockType()))
+                @elseif from.getY() > targetBlock.getY()
+                    # It's higher, remove self
+                    @var blBuffer.append(from.getLocation())
+                    @var blockTypeBuffer.append("air")
+                @fi
+            @fi
+        @done
+    @done
+@done
+
+# Change blocks
+@for Int i in list::range(0, blBuffer.length())
+    @var trySetBlock(thisAction, blBuffer[i], blockTypeBuffer[i])
+@done
+
+@var log("Flattened {{thisAction.length()}} Blocks")

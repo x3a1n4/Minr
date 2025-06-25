@@ -31,8 +31,8 @@
             @done
             
             @if getVanilla(from.getBlockType()) == "air"
-                # Create the block if it does not exist and has >=3 neighbours
-                @if numAdjBlocks >= 3
+                # Create the block if it does not exist and has >=4 neighbours
+                @if numAdjBlocks >= 4
                     @var blBuffer.append(from.getLocation())
                     @var blockTypeBuffer.append(newBlockNames.shuffle()[0])
                 @fi
