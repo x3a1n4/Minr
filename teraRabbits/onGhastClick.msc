@@ -1,6 +1,7 @@
 @using teraRabbits
 
 # @player Clicked a ghast!
+@fast
 
 # Get the block we're looking at
 @define Block targetBlock = player.getTargetBlock(120)

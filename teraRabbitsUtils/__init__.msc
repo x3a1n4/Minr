@@ -1,6 +1,7 @@
 @using teraRabbitsUtils
 
 # initialize maps
+@fast
 @var blockAltLookup = stringHashMap::SHashMap()
 @var blockDataLookup = stringHashMap::SHashMap()
 
