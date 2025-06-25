@@ -1,5 +1,6 @@
 # Rotates in Y by degrees
 # rotateY(BlockVector3 pivot, Double degrees)
+# Note: check BlockVector3().transform2D()
 @using teraRabbitsUtils
 @for Int i in list::range(0, this.blocks.length())
     @define Block b = this.blocks[i]

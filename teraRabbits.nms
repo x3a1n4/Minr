@@ -127,18 +127,20 @@
     teraRabbitsUtils::Pattern pattern
     teraRabbitsUtils::Selection selection
     teraRabbitsUtils::Clipboard clipboard
+    
+    # Set single block pattern
     selectSingleBlockPattern(Block targetBlock)
     # Create sphere at targetBlock
     sphere(Block targetBlock, Int size)
-    # Paint at the target block (don't replace air, use block replacements)
+    # Paint at the target block (don't replace air, TODO: use block replacements)
     paint(Block targetBlock, Int size)
     # Erase in a sphere
     erase(Block targetBlock, Int size)
-    # Smooth area around targetBlock
+    # Smooth area around targetBlock (not implemented)
     smooth(Block targetBlock, Int size)
-    # Pull area towards player (like spikes)
+    # Pull area towards player (like spikes) (not implemented)
     pull(Block targetBlock, Player targetPlayer, Int size)
-    # Flatten area (like a mesa)
+    # Flatten area (like a mesa) (not implemented)
     flatten(Block targetBlock, Int size)
     # set cubiod selection
     cuboidSelect(Block targetBlock)
@@ -160,7 +162,7 @@
     # undo
     undo()
 
-    # Spawn invisible rabbit (at top middle of block)
+    # Spawn invisible rabbit (at top middle of block) (not implemented)
     spawnRabbit(Block targetBlock)
 
     # End the session
