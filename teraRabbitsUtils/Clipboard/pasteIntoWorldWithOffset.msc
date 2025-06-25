@@ -3,7 +3,7 @@
 # Note: check BlockVector3().transform2D()
 @using teraRabbitsUtils
 @for Block block in this.blocks
-    @if ! (ignoreAir && getVanilla(block.getBlockType()) == "air")
+    @if ! (ignoreAir && block.isEmpty())
         @var trySetBlock(action, getRelativeBlock(b, offset.getX() - clipboard.offset.getX(), offset.getY() - clipboard.offset.getY(), offset.getZ() - clipboard.offset.getZ()).getLocation(), getVanilla(block.getBlockType()))
     @fi
 @done

@@ -15,7 +15,7 @@
             @define Block from = getRelativeBlock(targetBlock, x, y, z)
 
             @define Block above = getRelativeBlock(from, 0, 1, 0)
-            @if getVanilla(above.getBlockType()) == "air"
+            @if above.isEmpty()
                 @if from.getY() < targetBlock.getY()
                     # It's lower, add block above self
                     @var blBuffer.append(above.getLocation())

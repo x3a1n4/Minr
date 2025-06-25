@@ -9,7 +9,7 @@
 @for Int x in list::range(-size, size)
     @for Int y in list::range(-size, size)
         @for Int z in list::range(-size, size)
-            @if targetBlock.getBlockType() != "AIR"
+            @if ! targetBlock.isEmpty()
                 @define BlockLocation from = getRelativeBlock(targetBlock, x, y, z).getLocation()
                 @define String to = teraRabbitsTools::pattern.get(from)
 

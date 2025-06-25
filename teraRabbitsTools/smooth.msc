@@ -30,7 +30,7 @@
                 @fi
             @done
             
-            @if getVanilla(from.getBlockType()) == "air"
+            @if from.isEmpty()
                 # Create the block if it does not exist and has >=4 neighbours
                 @if numAdjBlocks >= 4
                     @var blBuffer.append(from.getLocation())
