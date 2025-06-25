@@ -9,6 +9,9 @@
         @fi
 
         @var ghastEntity.teleport(targetPlayer.getPosition())
+
+        # Render selection
+        @var teraRabbitsTools::selection.renderSelection()
         @delay 3
     @done
 @done
