@@ -2,6 +2,8 @@
 
 @var targetPlayer = player
 
+# TODO: ensure player is in creative mode to use it!
+
 @var teraRabbitsGlobals::world = player.getWorld().toLowerCase()
 # @var teraRabbitsUtils::log("{{teraRabbitsGlobals::world}}")
 
