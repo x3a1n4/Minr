@@ -82,6 +82,23 @@
         renderSelection()
 
         stringHashMap::SHashMap blocks
+        BlockVector3 lowerBound
+        BlockVector3 upperBound
+    @endclass
+
+    @class Clipboard
+        Clipboard()
+        createFromSelection(teraRabbitsUtils::Selection selection)
+        # If Ignore Air true, will ignore air blocks
+        pasteIntoWorldWithOffset(BlockVector3 offset, Boolean ignoreAir)
+        # Rotates in Y by degrees
+        # Not fully implemented
+        rotateY(BlockVector3 pivot, Double degrees)
+        # Flips on specific axis ["x", "y", "z"]
+        # Not implemented
+        flip(BlockVector3 pivot, String axis)
+
+        Block[] blocks
     @endclass
 
     initializeBlockData()
@@ -106,6 +123,7 @@
     # sets block selection
     teraRabbitsUtils::Pattern pattern
     teraRabbitsUtils::Selection selection
+    teraRabbitsUtils::Clipboard clipboard
     selectSingleBlockPattern(Block targetBlock)
     # Create sphere at targetBlock
     sphere(Block targetBlock, Int size)
@@ -121,6 +139,7 @@
     flatten(Block targetBlock, Int size)
     # set cubiod selection
     cuboidSelect(Block targetBlock)
+    Int selectionPosition
     # Extend cuboid to encompass target block
     cuboidExtend(Block targetBlock)
     # Set blocks in selection (rclick on block)

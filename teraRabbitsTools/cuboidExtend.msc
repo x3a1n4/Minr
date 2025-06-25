@@ -1,2 +1,7 @@
-@using teraRabbitsUtils
-@var log("Cuboid Extend (TODO)")
+@using teraRabbitsTools
+# Extend cuboid to encompass target block
+# cuboidExtend(Block targetBlock)
+
+# does a fair amount of redundant work
+@var selection.addCuboidToSelection(block.getLocation().asBlockVector3().getMinimum(selection.lowerBound), block.getLocation().asBlockVector3().getMaximum(selection.upperBound))
+@var log("Extended Selection")

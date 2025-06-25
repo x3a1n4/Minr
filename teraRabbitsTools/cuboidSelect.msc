@@ -1,2 +1,13 @@
-@using teraRabbitsUtils
-@var log("Cuboid Select (TODO)")
+@using teraRabbitsTools
+
+@if selectionPosition == 0
+    @var selection = teraRabbitsUtils::Selection()
+    @var selection.addBlockToSelection(targetBlock.getLocation())
+    @var selectionPosition = 1
+@else
+    # Kinda hacky
+    @var selection.addCuboidToSelection(selection.blocks[0], targetBlock.getLocation())
+    @var selectionPosition = 0
+@fi
+
+@var log("Set Position {{teraRabbitsTools::selectionPosition}}")

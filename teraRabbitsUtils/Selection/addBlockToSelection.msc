@@ -2,3 +2,6 @@
 @using teraRabbitsUtils
 
 @var this.blocks.set(location.string(), "")
+
+@var this.lowerBound = location.asBlockVector3().getMinimum(this.lowerBound.asBlockVector3())
+@var this.upperBound = location.asBlockVector3().getMaximum(this.upperBound.asBlockVector3())
