@@ -2,4 +2,9 @@
 # Create a BlockCache from a block
 @var this.location = block.getLocation()
 @var this.type = getVanilla(block.getBlockType())
-@var this.data = block.string()
+@var this.data = "null"
+
+# Get data
+@if block.string().matches(".*data=.*\[.*\].*fluid=.*")
+    @var this.data = block.string().split("\[")[1].split("\]")[0]
+@fi
