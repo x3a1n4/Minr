@@ -33,8 +33,10 @@
             @if from.isEmpty()
                 # Create the block if it does not exist and has >=4 neighbours
                 @if numAdjBlocks >= 4
+                    # Just set to a random block
+                    @var newBlockNames.shuffle()
                     @var blBuffer.append(from.getLocation())
-                    @var blockTypeBuffer.append(newBlockNames.shuffle()[0])
+                    @var blockTypeBuffer.append(newBlockNames[0])
                 @fi
             @else
                 # Delete the block if it exists and has <=2 neighbours

@@ -3,5 +3,7 @@
 # cuboidExtend(Block targetBlock)
 
 # does a fair amount of redundant work
-@var selection.addCuboidToSelection(block.getLocation().asBlockVector3().getMinimum(selection.lowerBound), block.getLocation().asBlockVector3().getMaximum(selection.upperBound))
-@var log("Extended Selection")
+@define BlockLocation min = BlockLocation(targetBlock.getLocation().asBlockVector3().getMinimum(selection.lowerBound), targetBlock.getWorld())
+@define BlockLocation max = BlockLocation(targetBlock.getLocation().asBlockVector3().getMaximum(selection.upperBound), targetBlock.getWorld())
+@var selection.addCuboidToSelection(min, max)
+@var teraRabbitsUtils::log("Extended Selection")

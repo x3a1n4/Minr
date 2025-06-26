@@ -4,10 +4,11 @@
     @var selection = teraRabbitsUtils::Selection()
     @var selection.addBlockToSelection(targetBlock.getLocation())
     @var selectionPosition = 1
+    @var firstPosition = targetBlock.getLocation()
 @else
     # Kinda hacky
-    @var selection.addCuboidToSelection(selection.blocks[0], targetBlock.getLocation())
+    @var selection.addCuboidToSelection(firstPosition, targetBlock.getLocation())
     @var selectionPosition = 0
 @fi
 
-@var log("Set Position {{teraRabbitsTools::selectionPosition}}")
+@var teraRabbitsUtils::log("Set Position {{teraRabbitsTools::selectionPosition}}")

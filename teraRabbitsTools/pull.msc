@@ -16,7 +16,7 @@
         @for Int z in list::range(-size, size)
             @define Block from = getRelativeBlock(targetBlock, x, y, z)
             @define Double strength = size - from.getLocation().asBlockVector3().distance(targetBlock.getLocation().asBlockVector3())
-            @define Vector3 delta = (player.getLocation().asVector3() - from.getLocation().asBlockVector3().asVector3()).normalize()
+            @define Vector3 delta = (targetPlayer.getLocation().asVector3() - from.getLocation().asBlockVector3().asVector3()).normalise()
 
             @define Vector3 origPos = from.getLocation().asBlockVector3().asVector3()
             @for Int i in list::range(0, Int(strength))

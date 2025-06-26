@@ -4,11 +4,11 @@
 @using teraRabbitsUtils
 
 # Check the blockdata array
-@var String orig_block = getVanilla(targetBlock.getBlockType())
-@var String block = getVanilla(heldItem.getItemType())
+@define String orig_block = getVanilla(targetBlock.getBlockType())
+@define String block = getVanilla(heldItem.getItemType())
 
 # Try to get a replacement
-@var String blockType = blockAltLookup.tryGetDefault(orig_block, "null")
+@define String blockType = blockAltLookup.tryGetDefault(orig_block, "null")
 @if blockType != "null"
     # Long lookup but ah well
     @for BlockData b in bd

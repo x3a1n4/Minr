@@ -3,7 +3,9 @@
 # Note: check BlockVector3().transform2D()
 @using teraRabbitsUtils
 @for Int i in list::range(0, this.blocks.length())
-    @define Block b = this.blocks[i]
-    @define BlockVector3 offset = b.getLocation() - pivot
-    @define BlockVector3 rotatedOffset = BlockVector3(Int(math::cos(degrees) * offset.getX()), offset.getY, Int(math::sin(degrees) * offset.getZ()))
+    @define BlockCache b = this.blocks[i]
+    @define BlockVector3 offset = b.location.asBlockVector3() - pivot
+    @define BlockVector3 rotatedOffset = BlockVector3(Int(math::cos(degrees) * offset.getX()), offset.getY(), Int(math::sin(degrees) * offset.getZ()))
 @done
+
+@var log("TODO")

@@ -167,6 +167,7 @@
     # set cubiod selection
     cuboidSelect(Block targetBlock)
     Int selectionPosition
+    BlockLocation firstPosition
     # Extend cuboid to encompass target block
     cuboidExtend(Block targetBlock)
     # Set blocks in selection (rclick on block)

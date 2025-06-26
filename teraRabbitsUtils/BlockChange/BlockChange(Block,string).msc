@@ -4,4 +4,4 @@
 @var this.originalBlock = BlockCache(block)
 
 # Change the block over
-@var this.block.getLocation().set(to)
+@var block.getLocation().set(to)
