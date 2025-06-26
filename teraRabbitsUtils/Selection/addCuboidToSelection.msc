@@ -7,6 +7,7 @@
 
 @define BlockVector3 min = location1.asBlockVector3().getMinimum(location2.asBlockVector3())
 @define BlockVector3 max = location1.asBlockVector3().getMaximum(location2.asBlockVector3())
+
 @for Int x in list::range(min.getX(), max.getX() + 1)
     @for Int y in list::range(min.getY(), max.getY() + 1)
         @for Int z in list::range(min.getZ(), max.getZ() + 1)
