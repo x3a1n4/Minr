@@ -1,0 +1,8 @@
+@using teraRabbitsUtils
+
+@fast
+@if this.data != "null"
+    @bypass /execute in minecraft:{{getVanilla(this.location.getWorld())}} run setblock {{this.location.asBlockVector3()}} minecraft:{{this.type}}[{{this.data}}] replace
+@else
+    @bypass /execute in minecraft:{{getVanilla(this.location.getWorld())}} run setblock {{this.location.asBlockVector3()}} minecraft:{{this.type}} replace
+@fi

@@ -10,11 +10,12 @@
 @for Int x in list::range(min.getX(), max.getX() + 1)
     @for Int y in list::range(min.getY(), max.getY() + 1)
         @for Int z in list::range(min.getZ(), max.getZ() + 1)
+            @define BlockLocation location = BlockLocation(x, y, z, location1.getWorld())
             @var this.blocks.set(location.string(), "")
 
             # Set bounds
-            @var this.lowerBound = location.asBlockVector3().getMinimum(this.lowerBound.asBlockVector3())
-            @var this.upperBound = location.asBlockVector3().getMaximum(this.upperBound.asBlockVector3())
+            @var this.lowerBound = location.asBlockVector3().getMinimum(this.lowerBound)
+            @var this.upperBound = location.asBlockVector3().getMaximum(this.upperBound)
         @done
     @done
 @done

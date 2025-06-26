@@ -13,7 +13,7 @@
         @var this.keys.append(key)
 
         # Add new terminator
-        @var this.hashMap[id].pairs.append(KeyValuePair(null, null))
+        @var this.hashMap[id].pairs.append(KeyValuePair("null", "null"))
         @return
     @fi
 

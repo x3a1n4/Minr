@@ -1,2 +1,3 @@
-@var this.blocks = Block[]
+@using teraRabbitsUtils
+@var this.blocks = BlockCache[]
 @var this.offset = BlockVector3(0, 0, 0)

@@ -8,7 +8,7 @@
     @var this.blocks = stringHashMap::SHashMap()
 @else
     # For each block, remove it
-    @for String blockLoc in this.blocks.keys:
+    @for String blockLoc in this.blocks.keys
         @var this.blocks.remove(blockLoc)
     @done
 @fi

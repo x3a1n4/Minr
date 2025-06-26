@@ -1,8 +1,8 @@
 # renderSelection()
 # For all blocks, render a single particle
 
-@for String sBlockLoc in this.blocks.keys
-    @define String[] b = sBlockLoc.split(" ")
-    @define BlockLocation block = BlockLocation(b[0], b[1], b[2], b[3])
-    @bypass /execute in minecraft:{{block.getWorld().toLowerCase()}} run particle minecraft:angry_villager {{block.getX()}} {{block.getY()()}} {{block.getZ()}} 0 0 0 1 1
+@fast
+@for BlockLocation block in this.getBlocks()
+    # /execute in minecraft:theta run particle minecraft:flame ~ ~ ~ 0 0 0 0 1 force
+    @bypass /execute in minecraft:{{block.getWorld().toLowerCase()}} run particle minecraft:flame {{block.asBlockVector3()}} 0 0 0 0 1 force
 @done

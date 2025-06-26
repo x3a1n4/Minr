@@ -4,6 +4,7 @@
 @endnamespace
 
 @namespace teraRabbitsUtils
+    # Data class for holding colours
     @class Colour
         # Default constructor
         Colour(Float r, Float g, Float b)
@@ -28,6 +29,7 @@
         String get(BlockLocation targetLocation)
     @endclass
 
+    # Structure for Block Alts
     @class BlockAlt
         # Constructors
         BlockAlt(String type, String block)
@@ -36,16 +38,33 @@
     @endclass
     stringHashMap::SHashMap blockAltLookup
 
+    # Structure for Block Changes, providing a revert method
     @class BlockChange
         # Sets the block to the given "to"
+        # TODO: modify so that original state is saved as BlockCache, rather than as string
         BlockChange(Block block, String to)
-        Block block
-        String originalBlock
-        String to
+        BlockChange(teraRabbitsUtils::BlockCache to)
+        teraRabbitsUtils::BlockCache originalBlock
 
         revert()
     @endclass
 
+    # Provides a virtual block that can be set in-world
+    @class BlockCache
+        # Creates a cache from a given block
+        BlockCache(Block block)
+        # Returns true if block is air
+        Boolean isEmpty()
+        # Sets the block in-world
+        set()
+        
+        # The location of the block
+        BlockLocation location
+        String type
+        String data
+    @endclass
+    
+    # Structure for holding colour of a block
     @class BlockData
         # Constructors
         BlockData(String block, Colour colour)
@@ -55,6 +74,7 @@
         teraRabbitsUtils::BlockAlt[] alts
     @endclass
 
+    # Class that holds a tool action, a wrapper for a list of blockchanges that can be undone
     @class Action
         # All tool usages should be logged through Actions, so that they can be undone
         Action(String name)
@@ -70,6 +90,7 @@
     @endclass
     teraRabbitsUtils::Action[] actionList
 
+    # Class providing selection functionality, wrapping a map of blocks
     @class Selection
         # Default constructor
         Selection()
@@ -87,6 +108,7 @@
         BlockVector3 upperBound
     @endclass
 
+    # Class providing selection functionality, wrapping an array of BlockCaches
     @class Clipboard
         Clipboard()
         createFromSelection(teraRabbitsUtils::Selection selection)
@@ -99,7 +121,7 @@
         # Not implemented
         flip(BlockVector3 pivot, String axis)
 
-        Block[] blocks
+        teraRabbitsUtils::BlockCache[] blocks
         # Offset of copy position
         BlockVector3 offset
     @endclass
@@ -145,6 +167,7 @@
     # set cubiod selection
     cuboidSelect(Block targetBlock)
     Int selectionPosition
+    BlockLocation firstPosition
     # Extend cuboid to encompass target block
     cuboidExtend(Block targetBlock)
     # Set blocks in selection (rclick on block)

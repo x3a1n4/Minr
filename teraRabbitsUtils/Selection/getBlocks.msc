@@ -1,7 +1,7 @@
 @define BlockLocation[] out = BlockLocation[]
 @for String sBlockLoc in this.blocks.keys
     @define String[] b = sBlockLoc.split(" ")
-    @var out.append(BlockLocation(b[0], b[1], b[2], b[3]))
+    @var out.append(BlockLocation(Int(b[0]), Int(b[1]), Int(b[2]), b[3]))
 @done
 
 @return out

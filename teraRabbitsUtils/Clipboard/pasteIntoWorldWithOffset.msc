@@ -2,8 +2,13 @@
 
 # Note: check BlockVector3().transform2D()
 @using teraRabbitsUtils
-@for Block block in this.blocks
+
+@for BlockCache block in this.blocks
     @if ! (ignoreAir && block.isEmpty())
-        @var trySetBlock(action, getRelativeBlock(b, offset.getX() - clipboard.offset.getX(), offset.getY() - clipboard.offset.getY(), offset.getZ() - clipboard.offset.getZ()).getLocation(), getVanilla(block.getBlockType()))
+        # Move by offset
+        @define BlockCache copy = block
+        @var copy.location = BlockLocation(block.location.asBlockVector3() + offset, block.location.getWorld())
+        # TODO: somehow move this to trySetBlock, so that masks can be implemented in the future
+        @var action.add(BlockChange(copy))
     @fi
 @done
