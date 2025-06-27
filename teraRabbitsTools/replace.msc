@@ -18,7 +18,7 @@
                     @var block = alt.block
 
                     # Return here to get out of it
-                    @bypass /execute in minecraft:{{teraRabbitsGlobals::world}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
+                    @bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
                     @return
                 @fi
             @done
@@ -26,6 +26,6 @@
     @done
 @fi
 
-@bypass /execute in minecraft:{{teraRabbitsGlobals::world}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
+@bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
 # @var targetBlock.getLocation().set(getVanilla(heldItem.getItemType()))
 # @var teraRabbitsUtils::log("Set block {{targetBlock}} to {{heldItem.getItemType()}}")

@@ -3,7 +3,7 @@
 # Should this also handle vertical walls? No, that sounds hard
 
 # flatten(Block targetBlock, Int size)
-@define Action thisAction = Action("Flatten [size {{size}}]")
+@define Action thisAction = Action("Flatten [size {{size}}]", player)
 
 # Set up buffer
 @define BlockLocation[] blBuffer = BlockLocation[]

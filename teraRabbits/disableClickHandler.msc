@@ -1,4 +1,4 @@
 @using teraRabbits
 
 @var teraRabbitsUtils::log("Stopping teraRabbits. Have a hoppy day!")
-@var ghastEntity.setHealth(0.0d)
+@var ghastEntity[player].setHealth(0.0d)

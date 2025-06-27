@@ -1,6 +1,6 @@
 @using teraRabbitsTools
 
-@var clipboard = teraRabbitsUtils::Clipboard()
-@var clipboard.createFromSelection(selection)
-@var clipboard.offset = targetBlock.getLocation().asBlockVector3()
+@var clipboard[player] = teraRabbitsUtils::Clipboard()
+@var clipboard[player].createFromSelection(selection[player])
+@var clipboard[player].offset = targetBlock.getLocation().asBlockVector3()
 @var teraRabbitsUtils::log("Copied Selection")

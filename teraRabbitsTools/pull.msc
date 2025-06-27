@@ -1,11 +1,10 @@
 @using teraRabbitsUtils
 # Pull area towards player (like spikes)
-# pull(Block targetBlock, Player targetPlayer, Int size)
 
 # Pseudocode: grab a line from the block to the player
 # Go 1 units along it n times, where n is the inverse of the distance to the target block
 # Set self at locations
-@define Action thisAction = Action("Pull [size {{size}}]")
+@define Action thisAction = Action("Pull [size {{size}}]", player)
 
 # Set up buffer
 @define BlockLocation[] blBuffer = BlockLocation[]
@@ -16,7 +15,7 @@
         @for Int z in list::range(-size, size)
             @define Block from = getRelativeBlock(targetBlock, x, y, z)
             @define Double strength = size - from.getLocation().asBlockVector3().distance(targetBlock.getLocation().asBlockVector3())
-            @define Vector3 delta = (targetPlayer.getLocation().asVector3() - from.getLocation().asBlockVector3().asVector3()).normalise()
+            @define Vector3 delta = (player.getLocation().asVector3() - from.getLocation().asBlockVector3().asVector3()).normalise()
 
             @define Vector3 origPos = from.getLocation().asBlockVector3().asVector3()
             @for Int i in list::range(0, Int(strength))

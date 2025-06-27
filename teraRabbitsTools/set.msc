@@ -1,7 +1,7 @@
 @using teraRabbitsUtils
 
-@define Action thisAction = Action("Set")
-@for BlockLocation block in teraRabbitsTools::selection.getBlocks()
+@define Action thisAction = Action("Set", player)
+@for BlockLocation block in teraRabbitsTools::selection[player].getBlocks()
     @var trySetBlock(thisAction, block, teraRabbitsTools::pattern.get(block))
 @done
 

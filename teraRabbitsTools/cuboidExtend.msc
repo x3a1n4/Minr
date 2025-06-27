@@ -5,5 +5,5 @@
 # does a fair amount of redundant work
 @define BlockLocation min = BlockLocation(targetBlock.getLocation().asBlockVector3().getMinimum(selection.lowerBound), targetBlock.getWorld())
 @define BlockLocation max = BlockLocation(targetBlock.getLocation().asBlockVector3().getMaximum(selection.upperBound), targetBlock.getWorld())
-@var selection.addCuboidToSelection(min, max)
+@var selection[player].addCuboidToSelection(min, max)
 @var teraRabbitsUtils::log("Extended Selection")

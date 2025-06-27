@@ -3,7 +3,7 @@
 
 @fast
 
-@define Action thisAction = Action("Erase [size {{size}}]")
+@define Action thisAction = Action("Erase [size {{size}}]", player)
 
 @for Int x in list::range(-size, size)
     @for Int y in list::range(-size, size)

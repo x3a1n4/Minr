@@ -40,47 +40,47 @@
     @player teraRabbitsUtils::log("Invalid size!")
 @else
     @if (command == "Set Single Pattern")
-        @var selectSingleBlockPattern(targetBlock)
+        @var selectSingleBlockPattern(targetBlock, player)
 
     @elseif (command == "Sphere")
-        @var sphere(targetBlock, size)
+        @var sphere(targetBlock, size, player)
     @elseif (command == "Paint")
-        @var paint(targetBlock, size)
+        @var paint(targetBlock, size, player)
     @elseif (command == "Erase")
-        @var erase(targetBlock, size)
+        @var erase(targetBlock, size, player)
 
     @elseif (command == "Smooth")
-        @var smooth(targetBlock, size)
+        @var smooth(targetBlock, size, player)
     @elseif (command == "Pull")
-        @var pull(targetBlock, player, size)
+        @var pull(targetBlock, size, player)
     @elseif (command == "Flatten")
-        @var flatten(targetBlock, size)
+        @var flatten(targetBlock, size, player)
 
     @elseif (command == "Cuboid Select")
-        @var cuboidSelect(targetBlock)
+        @var cuboidSelect(targetBlock, player)
     @elseif (command == "Cuboid Extend")
-        @var cuboidExtend(targetBlock)
+        @var cuboidExtend(targetBlock, player)
 
     @elseif (command == "Set")
-        @var set(targetBlock)
+        @var set(targetBlock, player)
     @elseif (command == "Copy")
-        @var copy(targetBlock)
+        @var copy(targetBlock, player)
     @elseif (command == "Paste")
-        @var paste(targetBlock)
+        @var paste(targetBlock, player)
     
     @elseif (command == "Stack")
-        @var stack(player, size)
+        @var stack(size, player)
 
     @elseif (command == "Undo")
-        @var undo()
+        @var undo(player)
 
     @elseif (command == "End")
         @var endSession(player)
 
     @elseif (command == "Spawn Rabbit")
-        @var spawnRabbit(targetBlock)
+        @var spawnRabbit(targetBlock, player)
     @else
         # By default, just replace block
-        @var replace(targetBlock, playerHeldItem)
+        @var replace(targetBlock, playerHeldItem, player)
     @fi
 @fi

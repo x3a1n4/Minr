@@ -4,13 +4,13 @@
 @fast
 
 # @var log("In sphere")
-@define Action thisAction = Action("Sphere [size {{size}}]")
+@define Action thisAction = Action("Sphere [size {{size}}]", player)
 
 @for Int x in list::range(-size, size)
     @for Int y in list::range(-size, size)
         @for Int z in list::range(-size, size)
             @define BlockLocation from = getRelativeBlock(targetBlock, x, y, z).getLocation()
-            @define String to = teraRabbitsTools::pattern.get(from)
+            @define String to = teraRabbitsTools::pattern[player].get(from)
 
             @if from.asBlockVector3().distance(targetBlock.getLocation().asBlockVector3()) < size
                 @var trySetBlock(thisAction, from, to)

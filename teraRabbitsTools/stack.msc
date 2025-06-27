@@ -1,26 +1,25 @@
 # Stack selection in facing direction
-# stack(Player targetPlayer, Int size)
 @using teraRabbitsUtils
 
-@define Action thisAction = Action("Stack [{{size}}]")
+@define Action thisAction = Action("Stack [{{size}}]", player)
 
 @define Clipboard stackClipboard = Clipboard()
-@var stackClipboard.createFromSelection(teraRabbitsTools::selection)
+@var stackClipboard.createFromSelection(teraRabbitsTools::selection[player])
 
 # get player facing
 @define BlockVector3 delta = (teraRabbitsTools::selection.upperBound - teraRabbitsTools::selection.lowerBound)
 @define BlockVector3 direction = BlockVector3(0, 0, 0)
-@if targetPlayer.getPitch() > 45
+@if player.getPitch() > 45
     @var direction = BlockVector3(0, delta.getY(), 0)
-@elseif targetPlayer.getPitch() < -45
+@elseif player.getPitch() < -45
     @var direction = BlockVector3(0, -delta.getY(), 0)
-@elseif 315 <= targetPlayer.getYaw() && targetPlayer.getYaw() < 45
+@elseif 315 <= player.getYaw() && player.getYaw() < 45
     @var direction = BlockVector3(delta.getX(), 0, 0)
-@elseif 45 <= targetPlayer.getYaw() && targetPlayer.getYaw() < 135
+@elseif 45 <= player.getYaw() && player.getYaw() < 135
     @var direction = BlockVector3(0, 0, delta.getZ())
-@elseif 135 <= targetPlayer.getYaw() && targetPlayer.getYaw() < 225
+@elseif 135 <= player.getYaw() && player.getYaw() < 225
     @var direction = BlockVector3(-delta.getX(), 0, 0)
-@elseif 225 <= targetPlayer.getYaw() && targetPlayer.getYaw() < 315
+@elseif 225 <= player.getYaw() && player.getYaw() < 315
     @var direction = BlockVector3(0, 0, -delta.getZ())
 @fi
 

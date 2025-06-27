@@ -1,1 +1,1 @@
-@var teraRabbits::disableClickHandler(targetPlayer)
+@var teraRabbits::disableClickHandler(player)
