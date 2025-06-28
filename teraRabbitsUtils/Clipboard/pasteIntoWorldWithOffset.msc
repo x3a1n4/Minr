@@ -9,14 +9,16 @@
     @if ! (ignoreAir && block.isEmpty())
         # Move by offset
         
-        @define BlockCache copy = block
+        @define BlockLocation origLocation = block.location
         # @var log("Paste Location: {{block.location.asBlockVector3() + offset - this.offset}}")
         # This changes the location of block.location
-        @var copy.location = BlockLocation(block.location.asBlockVector3() + offset - this.offset.asBlockVector3(), block.location.getWorld().toLowerCase())
+        @var block.location = BlockLocation(block.location.asBlockVector3() + offset - this.offset.asBlockVector3(), block.location.getWorld().toLowerCase())
         
         # TODO: somehow move this to trySetBlock, so that masks can be implemented in the future
-        @if canPlaceBlock(copy.location, action.player)
-            @var action.add(BlockChange(copy))
+        @if canPlaceBlock(block.location, action.player)
+            @var action.add(BlockChange(block))
         @fi
+
+        @var block.location = origLocation
     @fi
 @done
