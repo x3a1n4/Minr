@@ -97,9 +97,6 @@
         resetSelection()
         BlockLocation[] getBlocks()
 
-        # Render the selection in-world
-        renderSelection()
-
         Player player
         stringHashMap::SHashMap blocks
         BlockVector3 lowerBound
