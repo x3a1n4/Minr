@@ -57,8 +57,18 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 | Item Name      | Command Details                                                                                                         |
 |----------------|-------------------------------------------------------------------------------------------------------------------------|
 | `Undo`         | Undo the previous tool action                                                                                           |
-| `Spawn Rabbit` | Spawn an invisible, no-AI soundless rabbit at the target block. Fun fact: this was the original purpose of this script! (Not Implemented)|
+| `Spawn Rabbit` | Spawn an invisible, no-AI soundless rabbit at the target block. Fun fact: this was the original purpose of this script!|
 | `End`          | End teraRabbits, and return to regular creative mode                                                                    |
+
+## Bugs
+Pasting multiple times doesn't paste in the same spot
+Need to escape rclicking with empty hand
+Need to indicade where selection is copied from
+Need to kill ghasts
+Make ghast ride player (check interaction namespace)
+Need to check region
+Need to check player is in creative mode
+Pivot selection rendering from particle based to blockdisplayentity-based 
 
 ## Future Ideas
 These are some ideas that I have for the future. They may or may not be implemented, roughly in order of listing
