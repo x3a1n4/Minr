@@ -3,4 +3,5 @@
 # initialize maps
 @fast
 # set data
+@var log("Initializing block data")
 @var initializeBlockData()

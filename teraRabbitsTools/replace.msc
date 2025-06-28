@@ -6,6 +6,7 @@
 # Check the blockdata array
 @define String orig_block = getVanilla(targetBlock.getBlockType())
 @define String block = getVanilla(heldItem.getItemType())
+@define String orig_data = targetBlock.string().split("\[")[1].split("\]")[0]
 
 # Try to get a replacement
 @define String blockType = blockAltLookup.tryGetDefault(orig_block, "null")
@@ -18,7 +19,7 @@
                     @var block = alt.block
 
                     # Return here to get out of it
-                    @bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
+                    @bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}}[{{orig_data}}] destroy
                     @return
                 @fi
             @done

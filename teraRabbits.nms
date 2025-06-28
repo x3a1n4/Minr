@@ -136,7 +136,7 @@
     # Whether a player can place a block (for instance: regions, masks)
     Boolean canPlaceBlock(BlockLocation blockLocation, Player player)
 
-    BlockData[] bd
+    teraRabbitsUtils::BlockData[] bd
     String[] blockTypes
 @endnamespace
 
