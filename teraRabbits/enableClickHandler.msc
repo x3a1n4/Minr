@@ -31,7 +31,7 @@
 
     @if "{{ghastEntity[player]}}" == "null"
         @var teraRabbitsUtils::log("TeraRabbits timed out. Have a hoppy day!")
-        @bypass /execute in minecraft:{{world}} run minecraft:kill {{uuid}}
+        @var disableClickHandler(player)
     @fi
 @else
     @var teraRabbitsUtils::log("You need to be in creative to use TeraRabbits!")

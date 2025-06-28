@@ -2,3 +2,8 @@
 
 @var teraRabbitsUtils::log("Stopping teraRabbits. Have a hoppy day!")
 @bypass /execute in minecraft:{{ghastEntity[player].getWorld().toLowerCase()}} run minecraft:kill {{ghastEntity[player].getUniqueId()}}
+
+# kill clipboard
+@bypass /minecraft:kill @e[tag=teraRabbits-clipboard-{{player.getUniqueId()}}]
+# kill selection
+@bypass /minecraft:kill @e[tag=teraRabbits-selection-{{this.player.getUniqueId()}}]
