@@ -31,7 +31,7 @@
         String type
         String block
     @endclass
-    stringHashMap::SHashMap blockAltLookup
+    stringHashMap::SHashMap blockAltLookup = stringHashMap::SHashMap()
 
     # Structure for Block Changes, providing a revert method
     @class BlockChange
@@ -84,7 +84,7 @@
         undo()
     @endclass
     # Should be moved to tools?
-    relative teraRabbitsUtils::Action[] actionList
+    relative teraRabbitsUtils::Action[] actionList = teraRabbitsUtils::Action[]
 
     # Class providing selection functionality, wrapping a map of blocks
     @class Selection
@@ -142,8 +142,8 @@
     #   Shulker box named mask in hotbar will limit mask
     
     # sets block selection
-    relative teraRabbitsUtils::Pattern pattern
-    relative teraRabbitsUtils::Selection selection
+    relative teraRabbitsUtils::Pattern pattern = teraRabbitsUtils::Pattern(String["Stone"], "SIMPLE")
+    relative teraRabbitsUtils::Selection selection = teraRabbitsUtils::Selection()
     relative teraRabbitsUtils::Clipboard clipboard
     
     # Set single block pattern
@@ -162,7 +162,7 @@
     flatten(Block targetBlock, Int size, Player player)
     # set cubiod selection
     cuboidSelect(Block targetBlock, Player player)
-    relative Int selectionPosition
+    relative Int selectionPosition = 0
     relative BlockLocation firstPosition
     # Extend cuboid to encompass target block
     cuboidExtend(Block targetBlock, Player player)

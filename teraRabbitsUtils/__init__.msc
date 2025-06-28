@@ -2,9 +2,5 @@
 
 # initialize maps
 @fast
-@var blockAltLookup = stringHashMap::SHashMap()
-# @var blockDataLookup = stringHashMap::SHashMap()
-
 # set data
 @var initializeBlockData()
-@var actionList = Action[]

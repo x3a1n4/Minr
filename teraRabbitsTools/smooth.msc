@@ -29,7 +29,6 @@
                     @var newBlockNames.append(blockName)
                 @fi
             @done
-            
             @if from.isEmpty()
                 # Create the block if it does not exist and has >=4 neighbours
                 @if numAdjBlocks >= 4

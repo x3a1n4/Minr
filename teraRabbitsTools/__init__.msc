@@ -1,9 +1,3 @@
 @using teraRabbitsTools
 
 @delay 10
-# Default pattern
-@fast
-@var pattern = teraRabbitsUtils::Pattern(String["Stone"], "SIMPLE")
-# Default selection
-@var selection = teraRabbitsUtils::Selection()
-@var selectionPosition = 0
