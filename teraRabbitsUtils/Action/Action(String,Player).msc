@@ -1,5 +1,6 @@
 @using teraRabbitsUtils
 
 @var this.name = name
+@var this.player = player
 @var this.allBlocksChanged = BlockChange[]
 @var actionList[player].append(this)

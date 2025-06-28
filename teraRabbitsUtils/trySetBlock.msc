@@ -4,5 +4,7 @@
 # TODO: check blocks not identical
 @using teraRabbitsUtils
 
-@define Block origBlock = Block(location)
-@var action.add(BlockChange(origBlock, getVanilla(block)))
+@if canPlaceBlock(location, action.player)
+    @define Block origBlock = Block(location)
+    @var action.add(BlockChange(origBlock, getVanilla(block)))
+@fi

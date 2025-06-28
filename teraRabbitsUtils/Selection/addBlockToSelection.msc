@@ -10,3 +10,7 @@
     @var this.lowerBound = location.asBlockVector3().getMinimum(this.lowerBound)
     @var this.upperBound = location.asBlockVector3().getMaximum(this.upperBound)
 @fi
+
+# Render block w/ block display entity
+@fast
+@bypass /execute in minecraft:{{location.getWorld().toLowerCase()}} run summon block_display {location.asBlockVector3()} {Tags:["teraRabbits-selection-{{this.player.getUniqueId()}}"],transformation:{scale:[0.5f,0.5f,0.5f]},block_state:{Name:yellow_stained_glass}}

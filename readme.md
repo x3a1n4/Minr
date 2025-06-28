@@ -62,14 +62,16 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 
 ## Bugs
 Pasting multiple times doesn't paste in the same spot
-Need to escape rclicking with empty hand
-Need to indicade where selection is copied from
-Need to kill ghasts
-Make ghast ride player (check interaction namespace)
-Need to check region
-Need to check player is in creative mode
-Pivot selection rendering from particle based to blockdisplayentity-based 
+Pivot selection rendering from particle based to blockdisplayentity-based (done? )
+Need to indicade where selection is copied from (done?)
+Need to escape rclicking with empty hand error (doneish)
+Need to kill ghasts after some time (should be done)
+Make ghast ride player (check interaction namespace) (done)
+Need to check region (done)
+Need to check player is in creative mode (done)
 
+## To Add
+Show rabbits tool (show all invisible rabbits in thirty block area)
 ## Future Ideas
 These are some ideas that I have for the future. They may or may not be implemented, roughly in order of listing
 + Gradients

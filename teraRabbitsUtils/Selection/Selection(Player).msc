@@ -1,0 +1,5 @@
+@using teraRabbitsUtils
+
+# Initialize the block map
+@var this.player = player()
+@var this.resetSelection()

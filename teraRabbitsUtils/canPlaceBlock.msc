@@ -1,0 +1,10 @@
+# Check region
+@for Region r in blockLocation.getRegions()
+    @if r.isMemberPlayer(player) || r.isOwnerPlayer(player)
+
+    @else
+        @return false
+    @fi
+@done
+
+@return true

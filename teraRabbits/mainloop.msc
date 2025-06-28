@@ -1,21 +1,21 @@
-@using teraRabbits
+# @using teraRabbits
 
-# Copy ghast to player's location
-@for Int i in list::range(1, 1000)
-    @for Int j in list::range(1, 60)
-        @if "{{ghastEntity[player]}}" == "null"
-            @var teraRabbitsUtils::log("Ghast is null, TeraRabbits ended.")
-            @return
-        @fi
+# # Copy ghast to player's location
+# @for Int i in list::range(1, 1000)
+#     @for Int j in list::range(1, 60)
+#         @if "{{ghastEntity[player]}}" == "null"
+#             @var teraRabbitsUtils::log("Ghast is null, TeraRabbits ended.")
+#             @return
+#         @fi
 
-        @var ghastEntity[player].teleport(player.getPosition())
+#         # @var ghastEntity[player].teleport(player.getPosition())
 
-        # Render selection
-        @var teraRabbitsTools::selection[player].renderSelection()
-        @delay 3
-    @done
-@done
+#         # Render selection
+#         @var teraRabbitsTools::selection[player].renderSelection()
+#         @delay 3
+#     @done
+# @done
 
-# Time out
-@var teraRabbitsUtils::log("TeraRabbits timed out. Have a hoppy day!")
-@var ghastEntity[player].setHealth(0.0d)
+# # Time out
+# @var teraRabbitsUtils::log("TeraRabbits timed out. Have a hoppy day!")
+# @var ghastEntity[player].setHealth(0.0d)

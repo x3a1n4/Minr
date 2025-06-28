@@ -7,3 +7,7 @@
 
 @var this.lowerBound = BlockVector3(9999999, 9999999, 9999999)
 @var this.upperBound = BlockVector3(-9999999, -9999999, -9999999)
+
+# Delete all previous
+# @bypass @bypass /execute in minecraft:{{location.getWorld().toLowerCase()}} run kill @e[tag=["teraRabbits-selection-{{this.player.getUniqueId()}}"]]
+@bypass @bypass /kill @e[tag=["teraRabbits-selection-{{this.player.getUniqueId()}}"]]

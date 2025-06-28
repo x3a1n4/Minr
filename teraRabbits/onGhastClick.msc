@@ -12,6 +12,9 @@
 
 # Run functions based on tools named things
 @define Item playerHeldItem = player.getItemInMainHand()
+@if playerHeldItem == null
+    @return
+@fi
 @define String itemType = playerHeldItem.getItemType().toLowerCase()
 @define String itemName = playerHeldItem.getDisplayName()
 @if itemName == null

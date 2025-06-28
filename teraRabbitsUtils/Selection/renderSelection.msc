@@ -1,8 +1,8 @@
 # renderSelection()
 # For all blocks, render a single particle
 
-@fast
-@for BlockLocation block in this.getBlocks()
-    # /execute in minecraft:theta run particle minecraft:flame ~ ~ ~ 0 0 0 0 1 force
-    @bypass /execute in minecraft:{{block.getWorld().toLowerCase()}} run particle minecraft:flame {{block.asBlockVector3().asVector3() + Vector3(0.5, 0.5, 0.5)}} 0 0 0 0 1 force
-@done
+# @fast
+# @for BlockLocation block in this.getBlocks()
+#     # /execute in minecraft:theta run particle minecraft:flame ~ ~ ~ 0 0 0 0 1 force
+#     @bypass /execute in minecraft:{{block.getWorld().toLowerCase()}} run particle minecraft:flame {{block.asBlockVector3().asVector3() + Vector3(0.5, 0.5, 0.5)}} 0 0 0 0 1 force
+# @done

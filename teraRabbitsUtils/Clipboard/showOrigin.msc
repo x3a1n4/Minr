@@ -1,0 +1,3 @@
+
+@fast
+@bypass /execute in minecraft:{{this.offset.getWorld().toLowerCase()}} run summon block_display {this.offset.asBlockVector3()} {Tags:["teraRabbits-clipboard-{{this.player.getUniqueId()}}"],Glowing:1b,transformation:{scale:[1.1f,1.1f,1.1f]},block_state:{Name:lime_stained_glass}}

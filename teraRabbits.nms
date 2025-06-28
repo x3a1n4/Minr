@@ -74,6 +74,7 @@
         # All tool usages should be logged through Actions, so that they can be undone
         Action(String name, Player player)
         String name
+        Player player
         teraRabbitsUtils::BlockChange[] allBlocksChanged
 
         # Add a block change to this action
@@ -89,7 +90,7 @@
     # Class providing selection functionality, wrapping a map of blocks
     @class Selection
         # Default constructor
-        Selection()
+        Selection(Player player)
         addBlockToSelection(BlockLocation location)
         addCuboidToSelection(BlockLocation location1, BlockLocation location2)
         # Reset the selection - so that we only need to do initialize the hashmap once
@@ -99,6 +100,7 @@
         # Render the selection in-world
         renderSelection()
 
+        Player player
         stringHashMap::SHashMap blocks
         BlockVector3 lowerBound
         BlockVector3 upperBound
@@ -106,7 +108,7 @@
 
     # Class providing selection functionality, wrapping an array of BlockCaches
     @class Clipboard
-        Clipboard()
+        Clipboard(BlockLocation offset, Player player)
         createFromSelection(teraRabbitsUtils::Selection selection)
         # If Ignore Air true, will ignore air blocks
         pasteIntoWorldWithOffset(teraRabbitsUtils::Action action, BlockVector3 offset, Boolean ignoreAir)
@@ -116,10 +118,13 @@
         # Flips on specific axis ["x", "y", "z"]
         # Not implemented
         flip(BlockVector3 pivot, String axis)
+        # Render the origin point
+        showOrigin()
 
         teraRabbitsUtils::BlockCache[] blocks
         # Offset of copy position
-        BlockVector3 offset
+        BlockLocation offset
+        Player player
     @endclass
 
     initializeBlockData()
@@ -131,6 +136,8 @@
     Block getRelativeBlock(Block block, Int x, Int y, Int z)
     # convert a block type to its vanilla variantt
     String getVanilla(String type)
+    # Whether a player can place a block (for instance: regions, masks)
+    Boolean canPlaceBlock(BlockLocation blockLocation, Player player)
 
     BlockData[] bd
     String[] blockTypes

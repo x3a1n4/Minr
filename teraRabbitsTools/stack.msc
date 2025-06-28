@@ -3,7 +3,7 @@
 
 @define Action thisAction = Action("Stack [{{size}}]", player)
 
-@define Clipboard stackClipboard = Clipboard()
+@define Clipboard stackClipboard = Clipboard(BlockLocation(0, 0, 0, player.getWorld().toLowerCase()), player)
 @var stackClipboard.createFromSelection(teraRabbitsTools::selection[player])
 
 # get player facing

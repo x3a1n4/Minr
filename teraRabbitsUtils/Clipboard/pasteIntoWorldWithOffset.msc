@@ -3,13 +3,18 @@
 # Note: check BlockVector3().transform2D()
 @using teraRabbitsUtils
 
+@var log("{{offset}}, {{this.offset}}")
+
 @for BlockCache block in this.blocks
     @if ! (ignoreAir && block.isEmpty())
         # Move by offset
         @define BlockCache copy = block
         # @var log("Paste Location: {{block.location.asBlockVector3() + offset - this.offset}}")
-        @var copy.location = BlockLocation(block.location.asBlockVector3() + offset - this.offset, block.location.getWorld().toLowerCase())
+        @var copy.location = BlockLocation(block.location.asBlockVector3() + offset - this.offset.asBlockVector3(), block.location.getWorld().toLowerCase())
+        
         # TODO: somehow move this to trySetBlock, so that masks can be implemented in the future
-        @var action.add(BlockChange(copy))
+        @if canPlaceBlock(copy.location, action.player)
+            @var action.add(BlockChange(copy))
+        @fi
     @fi
 @done
