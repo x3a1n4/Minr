@@ -4,6 +4,7 @@ Hey! Thanks for checking out the repo. This is a Minr (zero.minr.org) script tha
 
 - [TeraRabbits (v1.0.0)](#terarabbits-v100)
   - [How to Use](#how-to-use)
+    - [Limitations](#limitations)
   - [Features](#features)
     - [Patterns](#patterns)
     - [Brushes](#brushes)
@@ -11,13 +12,20 @@ Hey! Thanks for checking out the repo. This is a Minr (zero.minr.org) script tha
     - [Selection Tools](#selection-tools)
     - [Clipboard](#clipboard)
     - [Miscelaneous](#miscelaneous)
+  - [Known Bugs](#known-bugs)
+  - [To Add](#to-add)
   - [Future Ideas](#future-ideas)
   - [Far Future Ideas](#far-future-ideas)
 
 ## How to Use
 To use this script, you'll want to bind your favourite block (or entity) with `teraRabbits::enableClickHandlerWrapper()`. This is the entry point to the module, and is independant of the rest of teraRabbits. 
 
-By default, teraRabbits acts as a replace/paint mode for building, similar to Axiom's. By naming items, you can invoke teraRabbit's impressive suite of tools! Make sure to embed any size arguments within square brackets, e.g `Sphere [4]`.
+By default, teraRabbits acts as a replace/paint mode for building, similar to Axiom's (including block type replacement). By naming items, you can invoke teraRabbit's impressive suite of tools! Make sure to embed any size arguments within square brackets, e.g `Sphere [4]`.
+
+### Limitations
++ Tools have a max size of `5`
++ The player must be in creative mode
++ Tools can only edit blocks inside regions that the player is a member of
 
 ## Features
 ### Patterns
@@ -61,7 +69,7 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 | `End`          | End teraRabbits, and return to regular creative mode                                                                    |
 
 ## Known Bugs
-Block replace lookup doesn't work
+[None at the moment!]
 
 ## To Add
 Show rabbits tool (show all invisible rabbits in thirty block area)
