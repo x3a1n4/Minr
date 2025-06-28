@@ -4,4 +4,4 @@
 @var this.player = player
 
 # kill existing displays
-@bypass @bypass /kill @e[tag=["teraRabbits-clipboard-{{this.player.getUniqueId()}}"]]
+@bypass /minecraft:kill @e[tag=teraRabbits-clipboard-{{this.player.getUniqueId()}}]

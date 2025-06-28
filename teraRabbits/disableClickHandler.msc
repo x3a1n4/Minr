@@ -1,4 +1,4 @@
 @using teraRabbits
 
 @var teraRabbitsUtils::log("Stopping teraRabbits. Have a hoppy day!")
-@var ghastEntity[player].setHealth(0.0d)
+@bypass /execute in minecraft:{{ghastEntity[player].getWorld().toLowerCase()}} run minecraft:kill {{ghastEntity[player].getUniqueId()}}

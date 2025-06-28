@@ -10,4 +10,4 @@
 
 # Delete all previous
 # @bypass @bypass /execute in minecraft:{{location.getWorld().toLowerCase()}} run kill @e[tag=["teraRabbits-selection-{{this.player.getUniqueId()}}"]]
-@bypass @bypass /kill @e[tag=["teraRabbits-selection-{{this.player.getUniqueId()}}"]]
+@bypass /minecraft:kill @e[tag=teraRabbits-selection-{{this.player.getUniqueId()}}]

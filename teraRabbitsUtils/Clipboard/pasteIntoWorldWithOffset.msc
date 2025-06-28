@@ -8,8 +8,10 @@
 @for BlockCache block in this.blocks
     @if ! (ignoreAir && block.isEmpty())
         # Move by offset
+        
         @define BlockCache copy = block
         # @var log("Paste Location: {{block.location.asBlockVector3() + offset - this.offset}}")
+        # This changes the location of block.location
         @var copy.location = BlockLocation(block.location.asBlockVector3() + offset - this.offset.asBlockVector3(), block.location.getWorld().toLowerCase())
         
         # TODO: somehow move this to trySetBlock, so that masks can be implemented in the future

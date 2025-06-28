@@ -12,7 +12,7 @@
 
 # Run functions based on tools named things
 @define Item playerHeldItem = player.getItemInMainHand()
-@if playerHeldItem == null
+@if playerHeldItem.getItemType().toLowerCase() == "air"
     @return
 @fi
 @define String itemType = playerHeldItem.getItemType().toLowerCase()

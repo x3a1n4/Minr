@@ -150,7 +150,7 @@
     
     # sets block selection
     relative teraRabbitsUtils::Pattern pattern = teraRabbitsUtils::Pattern(String["Stone"], "SIMPLE")
-    relative teraRabbitsUtils::Selection selection = teraRabbitsUtils::Selection()
+    relative teraRabbitsUtils::Selection selection = teraRabbitsUtils::Selection(null)
     relative teraRabbitsUtils::Clipboard clipboard
     
     # Set single block pattern
@@ -197,7 +197,7 @@
 
 @namespace teraRabbits
     # The main loop
-    mainloop(Player player)
+    # mainloop(Player player)
     enableClickHandler(Player player)
     disableClickHandler(Player player)
     # The ghast that holds onGhastClick
