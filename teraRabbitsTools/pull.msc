@@ -14,15 +14,20 @@
     @for Int y in list::range(-size, size)
         @for Int z in list::range(-size, size)
             @define Block from = getRelativeBlock(targetBlock, x, y, z)
-            @define Double strength = size - from.getLocation().asBlockVector3().distance(targetBlock.getLocation().asBlockVector3())
-            @define Vector3 delta = (player.getLocation().asVector3() - from.getLocation().asBlockVector3().asVector3()).normalise()
 
-            @define Vector3 origPos = from.getLocation().asBlockVector3().asVector3()
-            @for Int i in list::range(0, Int(strength))
-                @var origPos = origPos + delta
-                @var blBuffer.append(BlockLocation(origPos.asBlockVector3(), getVanilla(from.getWorld())))
-                @var blockTypeBuffer.append(getVanilla(from.getBlockType()))
-            @done
+            @if !from.isEmpty()
+                @define Double strength = size - from.getLocation().asBlockVector3().distance(targetBlock.getLocation().asBlockVector3())
+                @define Vector3 delta = (player.getLocation().asVector3() - from.getLocation().asBlockVector3().asVector3()).normalise()
+
+                @define Vector3 origPos = from.getLocation().asBlockVector3().asVector3()
+                @for Int i in list::range(0, Int(strength))
+                    @var origPos = origPos + delta
+                    # @var log("{{origPos.asBlockVector3()}}")
+
+                    @var blBuffer.append(BlockLocation(origPos.asBlockVector3(), getVanilla(from.getWorld())))
+                    @var blockTypeBuffer.append(getVanilla(from.getBlockType()))
+                @done
+            @fi
         @done
     @done
 @done
