@@ -160,9 +160,9 @@
     erase(Block targetBlock, Int size, Player player)
     # Smooth area around targetBlock
     smooth(Block targetBlock, Int size, Player player)
-    # Pull area towards player (like spikes) (not implemented)
+    # Pull area towards player (like spikes)
     pull(Block targetBlock, Int size, Player player)
-    # Flatten area (like a mesa) (not implemented)
+    # Flatten area (like a mesa)
     flatten(Block targetBlock, Int size, Player player)
     # set cubiod selection
     cuboidSelect(Block targetBlock, Player player)
@@ -185,8 +185,10 @@
     # undo
     undo(Player player)
 
-    # Spawn invisible rabbit (at top middle of block) (not implemented)
+    # Spawn invisible rabbit (at top middle of block)
     spawnRabbit(Block targetBlock, Player player)
+    # Show all rabbits within 25 blocks
+    showRabbits(Player player)
 
     # End the session
     endSession(Player player)

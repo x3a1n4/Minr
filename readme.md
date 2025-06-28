@@ -66,6 +66,7 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 |----------------|-------------------------------------------------------------------------------------------------------------------------|
 | `Undo`         | Undo the previous tool action                                                                                           |
 | `Spawn Rabbit` | Spawn an invisible, no-AI soundless rabbit at the target block. Fun fact: this was the original purpose of this script!|
+| `Show Rabbits` | Show all nearby invisible rabbits |
 | `End`          | End teraRabbits, and return to regular creative mode                                                                    |
 
 ## Known Bugs

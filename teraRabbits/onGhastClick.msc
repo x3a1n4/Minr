@@ -82,6 +82,8 @@
 
     @elseif (command == "Spawn Rabbit")
         @var spawnRabbit(targetBlock, player)
+    @elseif (command == "Show Rabbits")
+        @var showRabbits(player)
     @else
         # By default, just replace block
         @var replace(targetBlock, playerHeldItem, player)

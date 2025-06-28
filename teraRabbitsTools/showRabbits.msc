@@ -1,0 +1,5 @@
+@using teraRabbitsUtils
+
+@var log("@bypass /execute as {{player}} run effect give @e[distance=..25,type=minecraft:rabbit] minecraft:glowing 30")
+@bypass /execute as {{player}} run effect give @e[distance=..25,type=minecraft:rabbit] minecraft:glowing 30
+@var log("Showing Rabbits")
