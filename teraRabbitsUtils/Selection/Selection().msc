@@ -2,3 +2,6 @@
 
 # Initialize the block map
 @var this.blocks = stringHashMap::SHashMap()
+
+@var this.lowerBound = BlockVector3(9999999, 9999999, 9999999)
+@var this.upperBound = BlockVector3(-9999999, -9999999, -9999999)

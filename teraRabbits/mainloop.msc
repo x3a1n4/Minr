@@ -2,7 +2,7 @@
 
 # Copy ghast to player's location
 @for Int i in list::range(1, 1000)
-    @for Int j in list::range(1, 3)
+    @for Int j in list::range(1, 60)
         @if "{{ghastEntity[player]}}" == "null"
             @var teraRabbitsUtils::log("Ghast is null, TeraRabbits ended.")
             @return

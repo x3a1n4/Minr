@@ -7,24 +7,29 @@
 @var stackClipboard.createFromSelection(teraRabbitsTools::selection[player])
 
 # get player facing
-@define BlockVector3 delta = (teraRabbitsTools::selection.upperBound - teraRabbitsTools::selection.lowerBound)
+@define BlockVector3 delta = (teraRabbitsTools::selection[player].upperBound - teraRabbitsTools::selection[player].lowerBound)
 @define BlockVector3 direction = BlockVector3(0, 0, 0)
+@var log("{{teraRabbitsTools::selection[player].upperBound}}, {{teraRabbitsTools::selection[player].lowerBound}}")
+@var log("{{player.getPitch()}}, {{player.getYaw()}}")
 @if player.getPitch() > 45
-    @var direction = BlockVector3(0, delta.getY(), 0)
+    @var direction = BlockVector3(0, -delta.getY() - 1, 0)
 @elseif player.getPitch() < -45
-    @var direction = BlockVector3(0, -delta.getY(), 0)
-@elseif 315 <= player.getYaw() && player.getYaw() < 45
-    @var direction = BlockVector3(delta.getX(), 0, 0)
+    @var direction = BlockVector3(0, delta.getY() + 1, 0)
+
+@elseif player.getYaw() < -135 || player.getYaw() >= 135
+    @var direction = BlockVector3(0, 0, -delta.getZ() - 1)
+@elseif -135 <= player.getYaw() && player.getYaw() < -45
+    @var direction = BlockVector3(delta.getX() + 1, 0, 0)
+@elseif -45 <= player.getYaw() && player.getYaw() < 45
+    @var direction = BlockVector3(0, 0, delta.getZ() + 1)
 @elseif 45 <= player.getYaw() && player.getYaw() < 135
-    @var direction = BlockVector3(0, 0, delta.getZ())
-@elseif 135 <= player.getYaw() && player.getYaw() < 225
-    @var direction = BlockVector3(-delta.getX(), 0, 0)
-@elseif 225 <= player.getYaw() && player.getYaw() < 315
-    @var direction = BlockVector3(0, 0, -delta.getZ())
+    @var direction = BlockVector3(-delta.getX() - 1, 0, 0)
 @fi
 
+@var log("{{direction}}")
+
 @for Int i in list::range(1, size + 1)
-    @var stackClipboard.pasteIntoWorldWithOffset(thisAction, delta * i, true)
+    @var stackClipboard.pasteIntoWorldWithOffset(thisAction, direction * i, true)
 @done
 
 @var log("Changed {{thisAction.length()}} Blocks")

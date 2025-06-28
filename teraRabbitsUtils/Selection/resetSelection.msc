@@ -3,12 +3,7 @@
 
 @using teraRabbitsUtils
 # Figure out which is easier--making a new hashmap or deleting all the entries
-@if stringHashMap::arraySize < this.blocks.keys.length()
-    # It's easier to make a new map
-    @var this.blocks = stringHashMap::SHashMap()
-@else
-    # For each block, remove it
-    @for String blockLoc in this.blocks.keys
-        @var this.blocks.remove(blockLoc)
-    @done
-@fi
+@var this.blocks = stringHashMap::SHashMap()
+
+@var this.lowerBound = BlockVector3(9999999, 9999999, 9999999)
+@var this.upperBound = BlockVector3(-9999999, -9999999, -9999999)

@@ -32,7 +32,7 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 | `Paint [size]`   | Applies the active pattern to all non-air blocks within a radius of`[size]` |
 | `Erase [size]`  | Erases a sphere of size `[size]`                                            |
 | `Smooth [size]`  | Smooths out terrain in a radius of `[size]`                                 |
-| `Pull [size]`    | Pulls terrain towards the player in a radius of `[size]`                    |
+| `Pull [size]`    | Pulls terrain towards the player in a radius of `[size]` (not working)                   |
 | `Flatten [size]` | Flattens terrain around the targeted block in a radius of `[size]`          |
 
 ### Selections
@@ -62,8 +62,6 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 
 ## Future Ideas
 These are some ideas that I have for the future. They may or may not be implemented, roughly in order of listing
-+ Player-Independance (in roadmap)
-  + Currently, only one player can use the script at a time. This is a bit of an oversight
 + Gradients
   + I've got the block colour data, it's just a matter of using it. I'd love to add darken/lighten brushes or shadow tools at some point
 + Global Masks
