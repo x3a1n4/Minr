@@ -19,7 +19,7 @@ Hey! Thanks for checking out the repo. This is a Minr (zero.minr.org) script tha
 ## How to Use
 To use this script, you'll want to bind your favourite block (or entity) with `teraRabbits::enableClickHandlerWrapper()`. This is the entry point to the module, and is independant of the rest of teraRabbits. 
 
-By default, teraRabbits acts as a replace/paint mode for building, similar to Axiom's (including block type replacement). By naming items, you can invoke teraRabbit's impressive suite of tools! Make sure to embed any size arguments within square brackets, e.g `Sphere [4]`.
+By default, teraRabbits acts as a replace/paint mode for building, similar to Axiom's (including block type replacement). By naming items, you can invoke teraRabbit's suite of tools! Make sure to embed any size arguments within square brackets, e.g `Sphere [4]` makes spheres with a radius of 4.
 
 ### Limitations
 + Tools have a max size of `5`
@@ -40,7 +40,7 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 | `Paint [size]`   | Applies the active pattern to all non-air blocks within a radius of`[size]` |
 | `Erase [size]`  | Erases a sphere of size `[size]`                                            |
 | `Smooth [size]`  | Smooths out terrain in a radius of `[size]`                                 |
-| `Pull [size]`    | Pulls terrain towards the player in a radius of `[size]` (not working)                   |
+| `Pull [size]`    | Pulls terrain towards the player in a radius of `[size]`                   |
 | `Flatten [size]` | Flattens terrain around the targeted block in a radius of `[size]`          |
 
 ### Selections
