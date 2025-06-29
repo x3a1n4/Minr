@@ -23,7 +23,8 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 
 ### Limitations
 + Tools have a max size of `5`
-+ The player must be in creative mode
++ Selections have a max block limit of `1000`
++ The player must be in creative mode to use
 + Tools can only edit blocks inside regions that the player is a member of
 
 ## Features
