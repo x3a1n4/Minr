@@ -13,7 +13,6 @@ Hey! Thanks for checking out the repo. This is a Minr (zero.minr.org) script tha
     - [Clipboard](#clipboard)
     - [Miscelaneous](#miscelaneous)
   - [Known Bugs](#known-bugs)
-  - [To Add](#to-add)
   - [Future Ideas](#future-ideas)
   - [Far Future Ideas](#far-future-ideas)
 
@@ -72,8 +71,6 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 ## Known Bugs
 [None at the moment!]
 
-## To Add
-Show rabbits tool (show all invisible rabbits in thirty block area)
 ## Future Ideas
 These are some ideas that I have for the future. They may or may not be implemented, roughly in order of listing
 + Gradients
