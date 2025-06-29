@@ -37,7 +37,7 @@
 
 @using teraRabbitsTools
 # Check if size is too big
-@if (size > 5)
+@if (size > 6)
     @var teraRabbitsUtils::log("Size too big! Must be a maximum of 5")
 @elseif (size < 0) 
     @player teraRabbitsUtils::log("Invalid size!")

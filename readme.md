@@ -22,7 +22,7 @@ To use this script, you'll want to bind your favourite block (or entity) with `t
 By default, teraRabbits acts as a replace/paint mode for building, similar to Axiom's (including block type replacement). By naming items, you can invoke teraRabbit's suite of tools! Make sure to embed any size arguments within square brackets, e.g `Sphere [4]` makes spheres with a radius of 4.
 
 ### Limitations
-+ Tools have a max size of `5`
++ Tools have a max size of `6`
 + Selections have a max block limit of `1000`
 + The player must be in creative mode to use
 + Tools can only edit blocks inside regions that the player is a member of
