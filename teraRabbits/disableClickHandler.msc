@@ -6,4 +6,4 @@
 # kill clipboard
 @bypass /minecraft:kill @e[tag=teraRabbits-clipboard-{{player.getUniqueId()}}]
 # kill selection
-@bypass /minecraft:kill @e[tag=teraRabbits-selection-{{this.player.getUniqueId()}}]
+@bypass /minecraft:kill @e[tag=teraRabbits-selection-{{player.getUniqueId()}}]
