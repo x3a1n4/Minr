@@ -29,7 +29,7 @@
     @define String uuid = ghastEntity[player].getUniqueId()
     @delay 15m
 
-    @if "{{ghastEntity[player]}}" == "null"
+    @if "{{ghastEntity[player]}}" != "null"
         @var teraRabbitsUtils::log("TeraRabbits timed out. Have a hoppy day!")
         @var disableClickHandler(player)
     @fi
