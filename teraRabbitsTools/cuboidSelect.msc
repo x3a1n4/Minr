@@ -1,6 +1,6 @@
 @using teraRabbitsTools
 
-@if selectionPosition == 0
+@if selectionPosition[player] == 0
     @var selection[player] = teraRabbitsUtils::Selection(player)
     @var selection[player].addBlockToSelection(targetBlock.getLocation())
     @var selectionPosition[player] = 1

@@ -6,7 +6,10 @@
 # Check the blockdata array
 @define String orig_block = getVanilla(targetBlock.getBlockType())
 @define String block = getVanilla(heldItem.getItemType())
-@define String orig_data = targetBlock.string().split("\[")[1].split("\]")[0]
+@define String orig_data = ""
+@if targetBlock.string().matches(".*\[.*\].*")
+    @var orig_data = targetBlock.string().split("\[")[1].split("\]")[0]
+@fi
 
 # Try to get a replacement
 @define String blockType = blockAltLookup.tryGetDefault(orig_block, "null")
