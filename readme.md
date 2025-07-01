@@ -1,8 +1,8 @@
-# TeraRabbits (v1.0.0)
+# TeraRabbits (v1.0.1)
 
 Hey! Thanks for checking out the repo. This is a Minr (zero.minr.org) script that implements worldedit features I like, so that I don't need to keep bothering mods to //smooth for me
 
-- [TeraRabbits (v1.0.0)](#terarabbits-v100)
+- [TeraRabbits (v1.0.1)](#terarabbits-v101)
   - [How to Use](#how-to-use)
     - [Limitations](#limitations)
   - [Features](#features)
@@ -53,6 +53,7 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 | Item Name   | Command Details                                                          |
 |-------------|--------------------------------------------------------------------------|
 | `Set`       | Set all blocks in selection to the active pattern                        |
+| `Replace Air`       | Replace all air blocks in selection to the active pattern                        |
 | `Stack [n]` | Stack the current selection `[n]` times, in the direction you are facing |
 
 ### Clipboard

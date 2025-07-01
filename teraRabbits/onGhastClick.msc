@@ -65,6 +65,8 @@
         @var cuboidExtend(targetBlock, player)
 
     @elseif (command == "Set")
+        @var setOnlyAir(targetBlock, player)
+    @elseif (command == "Replace Air")
         @var set(targetBlock, player)
     @elseif (command == "Copy")
         @var copy(targetBlock, player)

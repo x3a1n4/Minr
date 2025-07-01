@@ -1,0 +1,10 @@
+@using teraRabbitsUtils
+
+@define Action thisAction = Action("Set", player)
+@for BlockLocation block in teraRabbitsTools::selection[player].getBlocks()
+    @if ! Block(block).isEmpty()
+        @var trySetBlock(thisAction, block, teraRabbitsTools::pattern.get(block))
+    @fi
+@done
+
+@var log("Set {{thisAction.length()}} Blocks")

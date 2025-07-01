@@ -172,6 +172,8 @@
     cuboidExtend(Block targetBlock, Player player)
     # Set blocks in selection (rclick on block)
     set(Block targetBlock, Player player)
+    # Set blocks in selection (rclick on block)
+    setAirOnly(Block targetBlock, Player player)
     # Copy to clipboard from block location
     copy(Block targetBlock, Player player)
     # Paste clipboard at block location
