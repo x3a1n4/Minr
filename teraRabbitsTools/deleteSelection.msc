@@ -1,0 +1,8 @@
+@using teraRabbitsUtils
+
+@define Action thisAction = Action("Set", player)
+@for BlockLocation block in teraRabbitsTools::selection[player].getBlocks()
+    @var trySetBlock(thisAction, block, "air")
+@done
+
+@var log("Set {{thisAction.length()}} Blocks")

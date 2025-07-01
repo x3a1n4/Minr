@@ -54,6 +54,7 @@ By default, teraRabbits acts as a replace/paint mode for building, similar to Ax
 |-------------|--------------------------------------------------------------------------|
 | `Set`       | Set all blocks in selection to the active pattern                        |
 | `Replace Air`       | Replace all air blocks in selection to the active pattern                        |
+| `Delete Selection`       | Set all blocks in selection to air |
 | `Stack [n]` | Stack the current selection `[n]` times, in the direction you are facing |
 
 ### Clipboard
