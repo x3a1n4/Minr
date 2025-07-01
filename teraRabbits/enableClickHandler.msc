@@ -29,6 +29,9 @@
     @define String uuid = ghastEntity[player].getUniqueId()
     @delay 15m
 
+    # Reset action list
+    @var teraRabbitsUtils::actionList.clear()
+
     @if "{{ghastEntity[player]}}" != "null"
         @var teraRabbitsUtils::log("TeraRabbits timed out. Have a hoppy day!")
         @var disableClickHandler(player)
