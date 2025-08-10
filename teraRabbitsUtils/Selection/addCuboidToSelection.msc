@@ -1,5 +1,7 @@
 # addCuboidToSelection(BlockLocation location1, BlockLocation location2)
 
+@fast
+
 # check if worlds match
 @if location1.getWorld() != location2.getWorld()
     @var teraRabbitsUtils::log("Selection Corners are in different worlds!")

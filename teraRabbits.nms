@@ -204,8 +204,8 @@
     enableClickHandler(Player player)
     disableClickHandler(Player player)
     # The ghast that holds onGhastClick
-    relative Entity ghastEntity
+    relative playerclickhandler::InteractEntity playerEntity
 
     # The ghast click function
-    onGhastClick(Player player)
+    onClick(Player player)
 @endnamespace

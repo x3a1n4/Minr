@@ -1,41 +1,15 @@
 @using teraRabbits
 
-# TODO: ensure player is in creative mode to use it!
-
-# Summon a massive ghast at player location, and attach the script to it
+# ensure player is in creative mode to use it
 @if player.getGameMode() == "CREATIVE"
-    @define String targetName = "{{player.getName()}} teraRabbits target"
-    # @bypass /execute in minecraft:{{player.getWorld().toLowerCase()}} run summon ghast ~ ~ ~ {ExplosionPower:0,CustomName:"{{targetName}}",NoAI:1b,PersistenceRequired:1b,Silent:1b,active_effects:[{id:invisibility,duration:999999,show_particles:0b}],attributes:[{id:scale,base:2f}]}
-
-    @bypass /execute in minecraft:{{player.getWorld().toLowerCase()}} run summon minecraft:interaction {{player.getX()}} {{player.getY()}} {{player.getZ()}} {Tags:[teraRabbitsInteraction], height:-2f, width:2f}
-
-    # Get the ghast
-    @var ghastEntity[player] = Entity(Int(player.getX()), Int(player.getY()), Int(player.getZ()), player.getWorld().toLowerCase())
-    # Make entity ride player
-    @var Entity(player.getUniqueId()).addPassenger(ghastEntity[player])
-
-    # Import script to ghast
-    @bypass /script import entity {{ghastEntity[player].getUniqueId()}} https://paste.minr.org/tacuwukire
+    @var playerEntity[player] = playerclickhandler::InteractEntity(player)
+    @var playerEntity[player].onInteractBindings.add("teraRabbits::onClick")
+    @var playerEntity[player].onKillBindings.add("teraRabbits::disableClickHandler")
 
     # Give the player an end item
     @bypass /give {{player}} minecraft:barrier[custom_name=End] 1
 
-    # Start mainloop
     @var teraRabbitsUtils::log("Starting TeraRabbits!")
-    # @var mainloop(player)
-
-    # Delay until time out
-    @define String world = ghastEntity[player].getWorld().toLowerCase()
-    @define String uuid = ghastEntity[player].getUniqueId()
-    @delay 15m
-
-    # Reset action list
-    @var teraRabbitsUtils::actionList[player].clear()
-
-    @if "{{ghastEntity[player]}}" != "null"
-        @var teraRabbitsUtils::log("TeraRabbits timed out. Have a hoppy day!")
-        @var disableClickHandler(player)
-    @fi
 @else
     @var teraRabbitsUtils::log("You need to be in creative to use TeraRabbits!")
 @fi

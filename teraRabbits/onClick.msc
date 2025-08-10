@@ -5,10 +5,6 @@
 
 # Get the block we're looking at
 @define Block targetBlock = player.getTargetBlock(120)
-# @player {{targetBlock.getLocation()}}
-
-# Just set it to be a block for now
-# @bypass /setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:red_concrete
 
 # Run functions based on tools named things
 @define Item playerHeldItem = player.getItemInMainHand()

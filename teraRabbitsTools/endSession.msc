@@ -1,1 +1,1 @@
-@var teraRabbits::disableClickHandler(player)
+@var teraRabbits::playerEntity[player].kill()
