@@ -2,4 +2,4 @@
 @fast 
 @define teraRabbitsUtils::Action action = teraRabbitsUtils::actionList[player].pop()
 @var action.undo()
-@var teraRabbitsUtils::log("Undid {{action.name}}")
+@var teraRabbitsUtils::log("Undid {{action.name}}", player)

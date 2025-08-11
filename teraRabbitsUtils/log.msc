@@ -1,2 +1,2 @@
 # Utility function to log messages consistently
-@player &6&lTeraRabbits: &r&6{{message}}
+@var logger[player].log({{message}})

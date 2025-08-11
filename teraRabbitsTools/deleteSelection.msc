@@ -5,4 +5,4 @@
     @var trySetBlock(thisAction, block, "air")
 @done
 
-@var log("Set {{thisAction.length()}} Blocks")
+@var log("Set {{thisAction.length()}} Blocks", player)

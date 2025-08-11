@@ -1,6 +1,6 @@
 @using teraRabbitsTools
 
-@var teraRabbitsUtils::log("Set Position {{teraRabbitsTools::selectionPosition[player]}}")
+@var teraRabbitsUtils::log("Set Position {{teraRabbitsTools::selectionPosition[player]}}", player)
 
 @if selectionPosition[player] == 0
     @var selectionPosition[player] = 1

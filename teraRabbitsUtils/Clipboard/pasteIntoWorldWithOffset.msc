@@ -3,14 +3,11 @@
 # Note: check BlockVector3().transform2D()
 @using teraRabbitsUtils
 
-@var log("{{offset}}, {{this.offset}}")
-
 @for BlockCache block in this.blocks
     @if ! (ignoreAir && block.isEmpty())
         # Move by offset
         
         @define BlockLocation origLocation = block.location
-        # @var log("Paste Location: {{block.location.asBlockVector3() + offset - this.offset}}")
         # This changes the location of block.location
         @var block.location = BlockLocation(block.location.asBlockVector3() + offset - this.offset.asBlockVector3(), block.location.getWorld().toLowerCase())
         

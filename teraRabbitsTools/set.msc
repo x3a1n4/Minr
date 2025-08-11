@@ -5,4 +5,4 @@
     @var trySetBlock(thisAction, block, teraRabbitsTools::pattern.get(block))
 @done
 
-@var log("Set {{thisAction.length()}} Blocks")
+@var log("Set {{thisAction.length()}} Blocks", player)

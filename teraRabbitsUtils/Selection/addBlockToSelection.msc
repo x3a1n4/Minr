@@ -13,5 +13,4 @@
 
 # Render block w/ block display entity
 @fast
-# @var log("/execute in minecraft:{{location.getWorld().toLowerCase()}} run summon block_display {{location.asBlockVector3()}} {Tags:[teraRabbits-selection-{{this.player.getUniqueId()}}],transformation:{scale:[0.5f,0.5f,0.5f]},block_state:{Name:yellow_stained_glass} }")
 @bypass /execute in minecraft:{{location.getWorld().toLowerCase()}} run summon block_display {{location.asBlockVector3().asVector3() + Vector3(0.25, 0.25, 0.25)}} {Tags:[teraRabbits-selection-{{this.player.getUniqueId()}}],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f],translation:[0f,0f,0f]},block_state:{Name:yellow_stained_glass} }

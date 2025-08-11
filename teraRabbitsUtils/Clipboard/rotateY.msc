@@ -8,4 +8,4 @@
     @define BlockVector3 rotatedOffset = BlockVector3(Int(math::cos(degrees) * offset.getX()), offset.getY(), Int(math::sin(degrees) * offset.getZ()))
 @done
 
-@var log("TODO")
+@var log("TODO", player)

@@ -1,7 +1,6 @@
 @using teraRabbitsUtils
-# Spawn invisible rabbit (at top middle of block) (not implemented)
+# Spawn invisible rabbit (at top middle of block)
 # spawnRabbit(Block targetBlock)
-# @var log("/execute in minecraft:{{targetBlock.getWorld()}} run summon minecraft:rabbit {{targetBlock.getLocation().asBlockVector3()}} {NoAI:1b,PersistenceRequired:1b,Silent:1b,active_effects:[{id:invisibility,duration:999999,show_particles:0b}]}")
 
 @bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run summon minecraft:rabbit {{targetBlock.getLocation().asBlockVector3().asVector3() + Vector3(0.5, 0.75, 0.5)}} {NoAI:1b,PersistenceRequired:1b,Silent:1b,active_effects:[{id:invisibility,duration:999999,show_particles:0b}]}
-@var log("Spawned Rabbit")
+@var log("Spawned Rabbit", player)

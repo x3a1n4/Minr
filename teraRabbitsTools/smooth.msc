@@ -53,4 +53,4 @@
     @var trySetBlock(thisAction, blBuffer[i], blockTypeBuffer[i])
 @done
 
-@var log("Smoothed {{thisAction.length()}} Blocks")
+@var log("Smoothed {{thisAction.length()}} Blocks", player)

@@ -18,4 +18,4 @@
     @done
 @done
 
-@var log("Erased {{thisAction.length()}} Blocks")
+@var log("Erased {{thisAction.length()}} Blocks", player)

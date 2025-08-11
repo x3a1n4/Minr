@@ -1,5 +1,10 @@
 @using teraRabbits
 
+# Create logger
+@var logger[player] = logger::Logger("TeraRabbits").setPlayerList(Player[p])
+# &6&lTeraRabbits: &r&6{{message}}
+@var logger[player].setLogFormat("{time}&6&l{name}: &r&6{message}")
+
 # ensure player is in creative mode to use it
 @if player.getGameMode() == "CREATIVE"
     @var playerEntity[player] = playerclickhandler::InteractEntity(player)
@@ -9,7 +14,7 @@
     # Give the player an end item
     @bypass /give {{player}} minecraft:barrier[custom_name=End] 1
 
-    @var teraRabbitsUtils::log("Starting TeraRabbits!")
+    @var teraRabbitsUtils::log("Starting TeraRabbits!", player)
 @else
-    @var teraRabbitsUtils::log("You need to be in creative to use TeraRabbits!")
+    @var teraRabbitsUtils::log("You need to be in creative to use TeraRabbits!", player)
 @fi

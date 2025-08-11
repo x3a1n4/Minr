@@ -3,7 +3,6 @@
 
 @fast
 
-# @var log("In sphere")
 @define Action thisAction = Action("Sphere [size {{size}}]", player)
 
 @for Int x in list::range(-size, size)
@@ -19,4 +18,4 @@
     @done
 @done
 
-@var log("Changed {{thisAction.length()}} Blocks")
+@var log("Changed {{thisAction.length()}} Blocks", player)

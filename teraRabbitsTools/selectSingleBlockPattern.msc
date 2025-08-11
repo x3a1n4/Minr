@@ -1,2 +1,2 @@
 @var teraRabbitsTools::pattern[player] = teraRabbitsUtils::Pattern(String[targetBlock.getBlockType()], "SAMPLE")
-@var teraRabbitsUtils::log("Pattern: {{teraRabbitsTools::pattern.blocks}}, Type: {{teraRabbitsTools::pattern.type}}")
+@var teraRabbitsUtils::log("Pattern: {{teraRabbitsTools::pattern.blocks}}, Type: {{teraRabbitsTools::pattern.type}}", player)

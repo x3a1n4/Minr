@@ -35,4 +35,4 @@
     @var trySetBlock(thisAction, blBuffer[i], blockTypeBuffer[i])
 @done
 
-@var log("Flattened {{thisAction.length()}} Blocks")
+@var log("Flattened {{thisAction.length()}} Blocks", player)

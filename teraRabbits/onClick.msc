@@ -16,27 +16,22 @@
 @if itemName == null
     @var itemName = "Replace"
 @fi
-# Debug statement
-# @var teraRabbitsUtils::log("Item: {{itemType}}, Name: {{itemName}}, Target Block: {{targetBlock}}")
 
 # Get size, command
 @define Int size = 0
 @define String command = itemName
-# @var teraRabbitsUtils::log("ItemName: {{itemName}}")
+
 @if itemName.matches(".*\[.*\].*")
     @var size = Int(itemName.split("\[")[1].split("\]")[0])
     @var command = itemName.split("\[")[0].trim()
 @fi
 
-# Debug statement
-# @var teraRabbitsUtils::log("Command: {{command}}, Size: {{size}}")
-
 @using teraRabbitsTools
 # Check if size is too big
 @if (size > 6)
-    @var teraRabbitsUtils::log("Size too big! Must be a maximum of 6")
+    @var teraRabbitsUtils::log("Size too big! Must be a maximum of 6", player)
 @elseif (size < 0) 
-    @player teraRabbitsUtils::log("Invalid size!")
+    @var teraRabbitsUtils::log("Invalid size!", player)
 @else
     @if (command == "Set Single Pattern")
         @var selectSingleBlockPattern(targetBlock, player)

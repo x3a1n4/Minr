@@ -127,7 +127,7 @@
     initializeBlockData()
     # Try to set a block given an action
     trySetBlock(teraRabbitsUtils::Action action, BlockLocation location, String block)
-    log(String message)
+    log(String message, Player player)
 
     # Get the block relative to a target block
     Block getRelativeBlock(Block block, Int x, Int y, Int z)
@@ -205,6 +205,8 @@
     disableClickHandler(Player player)
     # The ghast that holds onGhastClick
     relative playerclickhandler::InteractEntity playerEntity
+    # Logger
+    relative logger::Logger logger
 
     # The ghast click function
     onClick(Player player)

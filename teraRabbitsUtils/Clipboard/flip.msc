@@ -1,2 +1,2 @@
 @using teraRabbitsUtils
-@var log("TODO")
+@var log("TODO", player)

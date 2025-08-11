@@ -1,6 +1,6 @@
 @using teraRabbits
 
-@var teraRabbitsUtils::log("Stopping teraRabbits. Have a hoppy day!")
+@var teraRabbitsUtils::log("Stopping teraRabbits. Have a hoppy day!", player)
 
 # kill clipboard
 @bypass /minecraft:kill @e[tag=teraRabbits-clipboard-{{player.getUniqueId()}}]
