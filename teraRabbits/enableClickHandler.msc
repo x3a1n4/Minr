@@ -1,9 +1,7 @@
 @using teraRabbits
 
 # Create logger
-@var logger[player] = logger::Logger("TeraRabbits").setPlayerList(Player[p])
-# &6&lTeraRabbits: &r&6{{message}}
-@var logger[player].setLogFormat("{time}&6&l{name}: &r&6{message}")
+@var logger[player] = logger::Logger("TeraRabbits").setPlayerList(Player[player]).setLogFormat("{time}&6&l{name}: &r&6{message}")
 
 # ensure player is in creative mode to use it
 @if player.getGameMode() == "CREATIVE"

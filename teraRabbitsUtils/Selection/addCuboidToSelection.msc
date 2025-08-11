@@ -4,7 +4,7 @@
 
 # check if worlds match
 @if location1.getWorld() != location2.getWorld()
-    @var teraRabbitsUtils::log("Selection Corners are in different worlds!", player)
+    @var teraRabbitsUtils::log("Selection Corners are in different worlds!", this.player)
 @fi
 
 @define BlockVector3 min = location1.asBlockVector3().getMinimum(location2.asBlockVector3())
