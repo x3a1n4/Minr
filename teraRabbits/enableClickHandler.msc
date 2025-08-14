@@ -12,6 +12,9 @@
     # Give the player an end item
     @bypass /give {{player}} minecraft:barrier[custom_name=End] 1
 
+    # clear player actions
+    @var teraRabbitsUtils::actionList = teraRabbitsUtils::Action[]
+
     @var teraRabbitsUtils::log("Starting TeraRabbits!", player)
 @else
     @var teraRabbitsUtils::log("You need to be in creative to use TeraRabbits!", player)
