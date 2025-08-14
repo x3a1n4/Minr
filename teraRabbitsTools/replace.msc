@@ -22,7 +22,7 @@
                     @var block = alt.block
 
                     # Return here to get out of it
-                    @bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}}[{{orig_data}}] destroy
+                    @bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}}[{{orig_data}}] strict
                     @return
                 @fi
             @done
@@ -30,5 +30,5 @@
     @done
 @fi
 
-@bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} destroy
+@bypass /execute in minecraft:{{getVanilla(targetBlock.getWorld())}} run setblock {{targetBlock.getX()}} {{targetBlock.getY()}} {{targetBlock.getZ()}} minecraft:{{block}} strict
 # @var targetBlock.getLocation().set(getVanilla(heldItem.getItemType()))

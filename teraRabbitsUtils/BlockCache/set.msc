@@ -2,7 +2,7 @@
 
 @fast
 @if this.data != "null"
-    @bypass /execute in minecraft:{{getVanilla(this.location.getWorld())}} run setblock {{this.location.asBlockVector3()}} minecraft:{{this.type}}[{{this.data}}] replace
+    @bypass /execute in minecraft:{{getVanilla(this.location.getWorld())}} run setblock {{this.location.asBlockVector3()}} minecraft:{{this.type}}[{{this.data}}] strict
 @else
-    @bypass /execute in minecraft:{{getVanilla(this.location.getWorld())}} run setblock {{this.location.asBlockVector3()}} minecraft:{{this.type}} replace
+    @bypass /execute in minecraft:{{getVanilla(this.location.getWorld())}} run setblock {{this.location.asBlockVector3()}} minecraft:{{this.type}} strict
 @fi
